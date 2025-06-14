@@ -25,6 +25,11 @@
           Location
         </a>
       </li>
+      <li>
+        <a href="/catering" class="small-body">
+          Catering
+        </a>
+      </li>
     </ul>
   </nav>
   <a href="https://hva.nl" class="hva">
