@@ -2,6 +2,7 @@
   import { Logo, HvA } from "$lib/svgs";
   import { beforeNavigate } from '$app/navigation';
   import { isClientNavigation } from '$lib/stores/navigation';
+  import { base } from '$app/paths';
 
   beforeNavigate(() => {
     isClientNavigation.set(true);
@@ -10,23 +11,23 @@
 
 <header class="header">
   <nav>
-    <a href="/" class="logo">
+    <a href={base} class="logo">
       <span class="sr-only">Exposjoo</span>
       <Logo />
     </a>
     <ul>
       <li>
-        <a href="/schedule" class="small-body">
+        <a href={`${base}/schedule`} class="small-body">
           Schedule
         </a>
       </li>
       <li>
-        <a href="/location" class="small-body">
+        <a href={`${base}/location`} class="small-body">
           Location
         </a>
       </li>
       <li>
-        <a href="/catering" class="small-body">
+        <a href={`${base}/catering`} class="small-body">
           Catering
         </a>
       </li>
