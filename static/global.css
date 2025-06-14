@@ -1,0 +1,62 @@
+:root {
+  --design-size: 1440;
+
+  --background: #fff;
+  --accent-color: #ff0000;
+
+  --line-width: max(11px, calc(11/var(--design-size) * 100vw));
+  --padding: max(1rem, calc(16/var(--design-size) * 100vw));
+  --gap: calc(var(--padding) * 2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.xlarge-title {
+  font-size: max(6.5rem, calc(378/var(--design-size) * 100vw));
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+
+.small-body {
+  font-size: max(1.25rem, calc(18/var(--design-size) * 100vw));
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.button {
+  font-family: inherit;
+  padding: 0.1em 0.22em;
+  border-radius: 0;
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+a {
+  color: inherit;
+}
+
+
+.sr-only {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0); /* for IE only */
+  clip-path: inset(50%);
+}
