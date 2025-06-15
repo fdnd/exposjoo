@@ -7,6 +7,7 @@
   --line-width: max(11px, calc(11/var(--design-size) * 100vw));
   --padding: max(1rem, calc(16/var(--design-size) * 100vw));
   --gap: calc(var(--padding) * 2);
+  --bouncy-ease: cubic-bezier(0.47, 0, 0.23, 1.38);
 }
 
 * {
@@ -20,26 +21,46 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.xlarge-title {
+.xlarge-heading {
   font-size: max(6.5rem, calc(378/var(--design-size) * 100vw));
   line-height: 0.9;
   letter-spacing: -0.04em;
   font-weight: 600;
 }
 
-
-.small-body {
-  font-size: max(1.25rem, calc(18/var(--design-size) * 100vw));
-  line-height: 1.2;
+.medium-heading {
+  font-size: max(1.5rem, calc(32/var(--design-size) * 100vw));
+  line-height: 1.1;
   letter-spacing: -0.04em;
   font-weight: 600;
 }
 
+.medium-body {
+  font-size: max(1.25rem, calc(18/var(--design-size) * 100vw));
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.small-body {
+  font-size: max(1rem, calc(16/var(--design-size) * 100vw));
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+.xsmall-body {
+  font-size: max(0.875rem, calc(12/var(--design-size) * 100vw));
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
 .button {
   font-family: inherit;
+  font-weight: 500;
   padding: 0.1em 0.22em;
   border-radius: 0;
-  border: 1px solid #000;
+  border: 2px solid #000;
   background-color: #fff;
   color: #000;
   cursor: pointer;
@@ -50,6 +71,16 @@ a {
   color: inherit;
 }
 
+.p {
+  .medium-heading + .medium-body,
+  .medium-heading + .small-body,
+  .medium-body + .medium-body,
+  .medium-body + .small-body,
+  .small-body + .medium-body,
+  .small-body + .small-body {
+    margin-top: 1em;
+  }
+}
 
 .sr-only {
   position: absolute;

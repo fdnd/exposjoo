@@ -1,24 +1,39 @@
 <script>
-  import Intro from '$lib/components/Intro.svelte'
-  import Building from '$lib/components/Building.svelte'
-  import { onMount } from 'svelte'
-  
-  let buildingComponent
-  let introComplete = false
+  import Intro from "$lib/components/Intro.svelte";
+  import Building from "$lib/components/Building.svelte";
+  import Text from "$lib/components/Text.svelte";
+  import { onMount } from "svelte";
+  import { data } from "./data";
+
+  let buildingComponent;
+  let introComplete = false;
 
   function handleIntroComplete() {
-    introComplete = true
+    introComplete = true;
     if (buildingComponent) {
-      buildingComponent.startBuildingAnimation()
+      buildingComponent.startBuildingAnimation();
     }
   }
 
   onMount(() => {
     if (introComplete && buildingComponent) {
-      buildingComponent.startBuildingAnimation()
+      buildingComponent.startBuildingAnimation();
     }
-  })
+  });
 </script>
 
 <Intro on:introComplete={handleIntroComplete} />
-<Building bind:this={buildingComponent} />
+<div class="text">
+  <Text class="intro-text" text={data.introText} />
+</div>
+<Building bind:this={buildingComponent} courses={data.courses} />
+
+
+<style>
+  .text {
+    display: none;
+    @media (max-width: 1024px) {
+      display: block;
+    }
+  }
+</style>
