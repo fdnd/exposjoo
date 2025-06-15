@@ -173,12 +173,16 @@
     }
   }
 
-  :global(.building svg) {
+  :global(.building-svg) {
     pointer-events: none;
     overflow: visible;
-    max-height: 90vh;
-    max-width: 130%;
+    max-height: 120svh;
+    max-width: 120%;
     width: 100%;
+    @media (max-width: 750px) {
+        min-width: 140%;
+        max-width: unset;
+      }
   }
 
   .building {

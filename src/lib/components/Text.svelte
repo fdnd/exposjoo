@@ -9,8 +9,9 @@
 <style>
   .text {
     position: absolute;
+    max-width: max(30rem, calc(480 / var(--design-size) * 100vw));
     margin-top: max(4rem, calc(80 / var(--design-size) * 100vw));
     padding: 0 var(--padding);
-    max-width: max(30rem, calc(480 / var(--design-size) * 100vw));
+    text-wrap: balance;
   }
 </style>

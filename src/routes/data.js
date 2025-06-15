@@ -1,8 +1,7 @@
 export const data = {
   introText: `
   <p class="small-body">
-    Een typisch Amsterdamse digital design sjoo waar onderwijs, onderzoek en
-    industrie elkaar ontmoetten. 
+    A typical Amsterdam digital design sjoo where education, research and industry meet. 
   </p>
   <p class="small-body">
     2 juli 2025 - 17h - 21h <br>

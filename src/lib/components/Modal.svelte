@@ -33,7 +33,6 @@
     z-index: 11;
     align-content: center;
     margin: auto var(--padding) var(--padding) auto;
-
     max-width: max(30rem, calc(480 / var(--design-size) * 100vw));
     padding: calc(var(--padding) * 2) var(--padding);
     background-color: #fff;
@@ -42,13 +41,19 @@
       transform 0.5s var(--bouncy-ease),
       display 1s allow-discrete,
       overlay 1s allow-discrete;
-
     transform: translateY(calc(100% + var(--padding)));
+
+    @media (max-width: 750px) {
+      width: calc(100% - var(--padding) * 2);
+      max-width: 30rem;
+    }
+
     &::backdrop {
       opacity: 0;
       transition: opacity 0.5s var(--bouncy-ease);
       background-color: rgba(0, 0, 0, 0.5);
     }
+
     &[open] {
       display: block;
       transform: translateY(0);
@@ -64,6 +69,7 @@
       width: 1.25rem;
       height: 1.25rem;
     }
+
     .close-button {
       position: absolute;
       top: 0;
@@ -73,6 +79,9 @@
       padding: var(--padding);
       margin: 0;
       cursor: pointer;
+      :global(svg) {
+        fill: currentColor;
+      }
     }
   }
 </style>

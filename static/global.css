@@ -21,6 +21,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+button {
+  color: inherit;
+}
+
 .xlarge-heading {
   font-size: max(6.5rem, calc(378/var(--design-size) * 100vw));
   line-height: 0.9;

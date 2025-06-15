@@ -30,10 +30,4 @@
 
 
 <style>
-  .text {
-    display: none;
-    @media (max-width: 1024px) {
-      display: block;
-    }
-  }
 </style>
