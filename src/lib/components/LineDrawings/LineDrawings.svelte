@@ -33,8 +33,6 @@
   <svelte:component
     this={svgs[line]}
     inert
-    on:mouseenter={initDrawSVG}
-    on:mouseleave={initUndrawSVG}
   ></svelte:component>
 </span>
 
