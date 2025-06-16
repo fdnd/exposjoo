@@ -25,11 +25,8 @@
   };
 
   onMount(() => {
-    // Check if the page is being refreshed or newly loaded
-    const navigationType = performance.getEntriesByType("navigation")[0]?.type;
-    const isPageRefresh = navigationType === "reload";
-
-    if (!isPageRefresh || $isClientNavigation) {
+    // Only skip intro on client navigation
+    if ($isClientNavigation) {
       emit("introComplete");
       isVisible = false;
       return;
