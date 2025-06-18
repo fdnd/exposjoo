@@ -1,5 +1,5 @@
 <script>
-  import { Building, Close } from "$lib/svgs";
+  import { Building } from "$lib/svgs";
   import { onMount } from "svelte";
   import gsap from "gsap";
   import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
@@ -9,11 +9,19 @@
   let buttons = [];
   let anchorScope = "";
   let resizeTimeout = null;
-
+  let mm;
   export let courses;
 
   onMount(() => {
     gsap.registerPlugin(DrawSVGPlugin);
+    mm = gsap.matchMedia();
+
+    mm.add("(prefers-reduced-motion: reduce)", () => {
+      gsap.set(buildingElement, {
+        opacity: 1,
+      });
+    });
+
     buttons.forEach((button) => {
       positionButtons(button);
     });
@@ -25,40 +33,40 @@
       }, 100); // 100ms
     });
     buttons.forEach((button) => {
-      const xTo = gsap.quickTo(button, "x", {
-        duration: 0.25,
-        ease: "power2.out",
-      });
-      const yTo = gsap.quickTo(button, "y", {
-        duration: 0.25,
-        ease: "power2.out",
-      });
       const course = button.dataset.course;
       const windowElement = buildingElement.querySelector(
         `svg #${course}-hover`,
       );
-      if (!windowElement) return;
-      windowElement.addEventListener("mouseenter", (e) => {
-        const x = e.clientX - button.offsetWidth / 2;
-        const y = e.clientY + button.offsetHeight / 2;
-        gsap.set(button, {
-          position: "fixed",
-          left: 0,
-          top: 0,
-          x,
-          y,
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        const xTo = gsap.quickTo(button, "x", {
+          duration: 0.25,
+          ease: "power2.out",
+        });
+        const yTo = gsap.quickTo(button, "y", {
+          duration: 0.25,
+          ease: "power2.out",
+        });
+        if (!windowElement) return;
+        windowElement.addEventListener("mouseenter", (e) => {
+          const x = e.clientX - button.offsetWidth / 2;
+          const y = e.clientY + button.offsetHeight / 2;
+          gsap.set(button, {
+            position: "fixed",
+            left: 0,
+            top: 0,
+            x,
+            y,
+          });
+        });
+        windowElement.addEventListener("mousemove", (e) => {
+          const x = e.clientX + button.offsetWidth / 2;
+          const y = e.clientY + button.offsetHeight / 2;
+          xTo(x);
+          yTo(y);
         });
       });
 
-      windowElement.addEventListener("mousemove", (e) => {
-        const rect = windowElement.getBoundingClientRect();
-        const x = e.clientX + button.offsetWidth / 2;
-        const y = e.clientY + button.offsetHeight / 2;
-        xTo(x);
-        yTo(y);
-      });
-
-      windowElement.addEventListener("click", (e) => {
+      windowElement.addEventListener("click", () => {
         openModal(course);
       });
     });
@@ -93,27 +101,31 @@
 
   export const startBuildingAnimation = () => {
     // Add your building animation here
-    gsap.fromTo(
-      buildingElement,
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-      },
-    );
-    gsap.from(".building path", {
-      drawSVG: 0,
-      stagger: {
-        amount: -0.25,
-      },
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
+      gsap.fromTo(
+        buildingElement,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+        },
+      );
+      gsap.from(".building path", {
+        drawSVG: 0,
+        stagger: {
+          amount: -0.25,
+        },
+      });
     });
   };
 
   const openModal = (course) => {
-    const modal = buildingElement.querySelector(`.modal[data-course="${course}"]`);
+    const modal = buildingElement.querySelector(
+      `.modal[data-course="${course}"]`,
+    );
     if (!modal) return;
     modal.showModal();
     positionButtons();
@@ -180,9 +192,9 @@
     max-width: 120%;
     width: 100%;
     @media (max-width: 750px) {
-        min-width: 140%;
-        max-width: unset;
-      }
+      min-width: 140%;
+      max-width: unset;
+    }
   }
 
   .building {
@@ -190,11 +202,13 @@
     width: 100%;
     height: 100svh;
     overflow: hidden;
-    opacity: 0;
     display: flex;
     justify-content: center;
     align-items: end;
     transform-origin: center;
+    @media (max-width: 750px) {
+      border-bottom: 70px solid #dbdbdb;
+    }
   }
 
   .button {
@@ -211,6 +225,4 @@
       opacity: 1;
     }
   }
-
-  
 </style>

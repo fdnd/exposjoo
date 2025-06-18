@@ -1,23 +1,35 @@
 <script>
-  import { Close } from "$lib/svgs";
-  import { data } from "../../routes/data";
-  import { createEventDispatcher } from "svelte";
+  import { Close } from '$lib/svgs'
+  import { createEventDispatcher } from 'svelte'
 
-  let modal;
-  export let course;
+  let modal
+  export let course
 
-  const emit = createEventDispatcher();
+  const emit = createEventDispatcher()
+
+  // Generate random border-radius values
+  const generateRandomBorderRadius = () => {
+    // Original values: 255px 15px 225px 15px / 15px 225px 15px 255px
+    const originalValues = [255, 15, 225, 15, 15, 225, 15, 255]
+    const values = originalValues.map(original => {
+      // Add random variation of ±40px for larger values, ±10px for smaller values
+      const variation = original > 100 ? Math.random() * 80 - 40 : Math.random() * 20 - 10
+      return Math.max(5, Math.floor(original + variation)) // Ensure minimum of 5px
+    })
+    return `${values[0]}px ${values[1]}px ${values[2]}px ${values[3]}px / ${values[4]}px ${values[5]}px ${values[6]}px ${values[7]}px`
+  }
 </script>
 
-<dialog class="modal p" data-course={course.class} bind:this={modal}>
+<dialog class="modal p" data-course={course.class} bind:this={modal} style="--random-border-radius: {generateRandomBorderRadius()}">
   <button
     class="close-button"
     on:click={() => {
-      modal.close();
-      emit("closingModal");
+      modal.close()
+      emit('closingModal')
     }}
   >
     <Close />
+    <span class="sr-only">Close modal</span>
   </button>
   <h2 class="medium-heading">{@html course.modal.title}</h2>
   <p class="small-body">{@html course.modal.intro}</p>
@@ -28,59 +40,19 @@
 
 <style lang="scss">
   .modal {
-    display: none;
-    position: fixed;
-    z-index: 11;
-    align-content: center;
     margin: auto var(--padding) var(--padding) auto;
     max-width: max(30rem, calc(480 / var(--design-size) * 100vw));
-    padding: calc(var(--padding) * 2) var(--padding);
-    background-color: #fff;
-    transition-behavior: allow-discrete;
-    transition:
-      transform 0.5s var(--bouncy-ease),
-      display 1s allow-discrete,
-      overlay 1s allow-discrete;
     transform: translateY(calc(100% + var(--padding)));
-
+    border-radius: var(--random-border-radius);
     @media (max-width: 750px) {
       width: calc(100% - var(--padding) * 2);
       max-width: 30rem;
     }
 
-    &::backdrop {
-      opacity: 0;
-      transition: opacity 0.5s var(--bouncy-ease);
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
     &[open] {
-      display: block;
       transform: translateY(0);
-      &::backdrop {
-        opacity: 1;
-      }
       @starting-style {
         transform: translateY(calc(100% + var(--padding)));
-      }
-    }
-
-    :global(svg) {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
-
-    .close-button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: none;
-      border: none;
-      padding: var(--padding);
-      margin: 0;
-      cursor: pointer;
-      :global(svg) {
-        fill: currentColor;
       }
     }
   }

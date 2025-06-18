@@ -1,1 +1,12 @@
-// place files you want to import through the `$lib` alias in this folder.
+export const openRegisterForm = () => {
+  const registerForm = document.querySelector('.register-form')
+  if (registerForm) {
+    registerForm.showModal()
+  }
+}
+export const closeRegisterForm = () => {
+  const registerForm = document.querySelector('.register-form')
+  if (registerForm) {
+    registerForm.close()
+  }
+}

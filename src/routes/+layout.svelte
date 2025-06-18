@@ -1,38 +1,28 @@
 <script>
-  import { Logo, HvA, LocationPin, Calendar, MenuTrigger } from "$lib/svgs";
-  import { beforeNavigate } from "$app/navigation";
-  import { isClientNavigation } from "$lib/stores/navigation";
-  import { base } from "$app/paths";
-  import { page } from "$app/stores";
-  import LineDrawings from "$lib/components/LineDrawings/LineDrawings.svelte";
+  import { Logo, HvA, MenuTrigger, Close } from '$lib/svgs'
+  import { beforeNavigate } from '$app/navigation'
+  import { isClientNavigation } from '$lib/stores/navigation'
+  import { base } from '$app/paths'
+  import { page } from '$app/stores'
+  import LineDrawings from '$lib/components/LineDrawings/LineDrawings.svelte'
+  import { openRegisterForm, closeRegisterForm } from '$lib/index.js'
 
-  let lineDrawings = [];
-  let locationLine;
-  let isOpen = $state(false);
+  let lineDrawings = []
+
+  let isOpen = $state(false)
   let navItems = [
     {
-      name: "Schedule",
-      href: `${base}/schedule`,
-      line: "Underline1",
-      duration: "0.4s",
-    },
-    {
-      name: "Location",
-      href: `${base}/location`,
-      line: "Underline2",
-      duration: "0.8s",
-    },
-    {
-      name: "Catering",
-      href: `${base}/catering`,
-      line: "Underline3",
-      duration: "0.8s",
-    },
-  ];
+      name: 'About',
+      href: `${base}/about`,
+      line: 'Underline2',
+      duration: '0.4s',
+    }
+  ]
 
   beforeNavigate(() => {
-    isClientNavigation.set(true);
-  });
+    isClientNavigation.set(true)
+  })
+  
 </script>
 
 <header class="header">
@@ -49,7 +39,7 @@
             class="medium-body"
             class:is-active={item.href === $page.url.pathname}
             onclick={() => {
-              isOpen = false;
+              isOpen = false
             }}
           >
             {item.name}
@@ -64,6 +54,7 @@
     </ul>
   </nav>
   <div class="right">
+    <button class="button" onclick={openRegisterForm}> Register </button>
     <a href="https://hva.nl" class="hva">
       <HvA />
     </a>
@@ -71,7 +62,7 @@
       class="trigger"
       class:is-open={isOpen}
       onclick={() => {
-        isOpen = !isOpen;
+        isOpen = !isOpen
       }}
     >
       <MenuTrigger />
@@ -83,23 +74,19 @@
   <slot />
 </main>
 
-<footer>
-  <p class="xsmall-body">
-    <a href={`${base}/`} class="logo">
-      <span class="sr-only">Exposjoo</span>
-      <Logo />
-    </a>
-    <a class="icon-link" href="#aanmelden" target="_blank">
-      <Calendar />
-      2 juli 2025 - 17.00h - 21.00h
-    </a>
-    <a class="icon-link" href="https://maps.app.goo.gl/R6NSiGg9Qx6RXmuT6" target="_blank">
-      <LocationPin />
-      <span> Theo Thijssenhuis Amsterdam </span>
-    </a>
-  </p>
-  <a href="#aanmelden" class="button" target="_blank"> Let us know you're coming </a>
-</footer>
+<dialog class="register-form">
+  <button class="close-button" onclick={closeRegisterForm}>
+    <Close />
+    <span class="sr-only">Close popup</span>
+  </button>
+  <h1 class="medium-heading">Register for the Exposjoo</h1>
+  <div
+    data-form-id="4fbea2b4-af4a-f011-877a-000d3ab670f1"
+    data-form-api-url="https://public-eur.mkt.dynamics.com/api/v1.0/orgs/7c8e8ad8-52ca-ed11-aece-0022489e3349/eventmanagement"
+    data-cached-form-url="https://assets-eur.mkt.dynamics.com/7c8e8ad8-52ca-ed11-aece-0022489e3349/digitalassets/forms/4fbea2b4-af4a-f011-877a-000d3ab670f1"
+    ></div>
+    <script src="https://cxppusa1formui01cdnsa01-endpoint.azureedge.net/eur/FormLoader/FormLoader.bundle.js"></script>
+</dialog>
 
 <style lang="scss">
   .header {
@@ -183,6 +170,25 @@
         fill: currentColor;
       }
     }
+    .button {
+      padding: 0.5em 1em;
+      color: var(--accent-color);
+      border-color: currentColor;
+      font-weight: 700;
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      background-color: #fff;
+      &:hover {
+        background-color: #fff;
+        color: #000;
+      }
+      @media (max-width: 750px) {
+        position: fixed;
+        bottom: var(--padding);
+        z-index: 10;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
     .trigger {
       padding: 0;
       background: none;
@@ -214,64 +220,6 @@
       }
       @media (max-width: 750px) {
         display: block;
-      }
-    }
-  }
-  footer {
-    text-transform: lowercase;
-    position: fixed;
-    background-color: #fff;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    padding: var(--padding);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-top: 2px solid #000;
-    @media (max-width: 750px) {
-      justify-content: center;
-      background: none;
-      border: none;
-    }
-    p {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.5em;
-      & > span {
-        font-weight: 600;
-      }
-      @media (max-width: 750px) {
-        display: none;
-      }
-    }
-    a,
-    span {
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5em;
-      :global(svg) {
-        height: 1.25em;
-        transition: transform 0.4s ease-in-out;
-      }
-    }
-    .icon-link:hover {
-      :global(svg) {
-        transform: rotate(-10deg);
-      }
-    }
-    .button {
-      padding: 0.5em 1em;
-      color: var(--accent-color);
-      border-color: currentColor;
-      font-weight: 700;
-      transition: all 0.2s ease-in-out;
-      &:hover {
-        background-color: #fff;
-        color: #000;
       }
     }
   }
