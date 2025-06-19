@@ -1,29 +1,28 @@
 <script>
-  import { Logo, HvA, MenuTrigger, Close } from '$lib/svgs'
-  import { beforeNavigate } from '$app/navigation'
-  import { isClientNavigation } from '$lib/stores/navigation'
-  import { base } from '$app/paths'
-  import { page } from '$app/stores'
-  import LineDrawings from '$lib/components/LineDrawings/LineDrawings.svelte'
-  import { openRegisterForm, closeRegisterForm } from '$lib/index.js'
+  import { Logo, HvA, MenuTrigger, Close } from "$lib/svgs";
+  import { beforeNavigate } from "$app/navigation";
+  import { isClientNavigation } from "$lib/stores/navigation";
+  import { base } from "$app/paths";
+  import { page } from "$app/stores";
+  import LineDrawings from "$lib/components/LineDrawings/LineDrawings.svelte";
+  import { openRegisterForm, closeRegisterForm } from "$lib/index.js";
+  
 
-  let lineDrawings = []
+  let lineDrawings = [];
 
-  let isOpen = $state(false)
+  let isOpen = $state(false);
   let navItems = [
     {
-      name: 'About',
+      name: "About",
       href: `${base}/about`,
-      line: 'Underline2',
-      duration: '0.4s',
-    }
-  ]
-  
+      line: "Underline2",
+      duration: "0.4s",
+    },
+  ];
 
   beforeNavigate(() => {
-    isClientNavigation.set(true)
-  })
-  
+    isClientNavigation.set(true);
+  });
 </script>
 
 <header class="header">
@@ -40,7 +39,7 @@
             class="medium-body"
             class:is-active={item.href === $page.url.pathname}
             onclick={() => {
-              isOpen = false
+              isOpen = false;
             }}
           >
             {item.name}
@@ -63,7 +62,7 @@
       class="trigger"
       class:is-open={isOpen}
       onclick={() => {
-        isOpen = !isOpen
+        isOpen = !isOpen;
       }}
     >
       <MenuTrigger />
@@ -85,8 +84,10 @@
     data-form-id="4fbea2b4-af4a-f011-877a-000d3ab670f1"
     data-form-api-url="https://public-eur.mkt.dynamics.com/api/v1.0/orgs/7c8e8ad8-52ca-ed11-aece-0022489e3349/eventmanagement"
     data-cached-form-url="https://assets-eur.mkt.dynamics.com/7c8e8ad8-52ca-ed11-aece-0022489e3349/digitalassets/forms/4fbea2b4-af4a-f011-877a-000d3ab670f1"
-    ></div>
-    <script src="https://cxppusa1formui01cdnsa01-endpoint.azureedge.net/eur/FormLoader/FormLoader.bundle.js"></script>
+  ></div>
+  <script
+    src="https://cxppusa1formui01cdnsa01-endpoint.azureedge.net/eur/FormLoader/FormLoader.bundle.js"
+  ></script>
 </dialog>
 
 <style lang="scss">
@@ -177,7 +178,10 @@
       color: var(--accent-color);
       border-color: currentColor;
       font-weight: 700;
-      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      transition:
+        background-color 0.2s ease-in-out,
+        color 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
       background-color: #fff;
       &:hover {
         background-color: #fff;
