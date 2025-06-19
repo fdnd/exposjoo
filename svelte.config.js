@@ -4,7 +4,7 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 export default {
   kit: {
     adapter: adapter({
-      fallback: '404.html'
+      fallback: '/404.html',
     }),
     prerender: {
       entries: ['/', '/about/', '/404/'],
@@ -16,9 +16,6 @@ export default {
         // Throw other errors
         throw new Error(message)
       }
-    },
-    paths: {
-      base: '/exposjoo'
     }
   },
   preprocess: vitePreprocess()
