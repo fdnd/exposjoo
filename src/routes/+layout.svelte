@@ -169,6 +169,7 @@
       width: max(6rem, calc(180 / var(--design-size) * 100vw));
       :global(svg) {
         fill: currentColor;
+        width: 100%;
       }
     }
     .button {
