@@ -18,6 +18,7 @@
       duration: '0.4s',
     }
   ]
+  
 
   beforeNavigate(() => {
     isClientNavigation.set(true)
