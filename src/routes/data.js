@@ -12,9 +12,6 @@ export const data = {
         title: 'Master Digital Design (MDD)',
         intro: 'On the fourth floor you can find all the end products of the projects of the students of the one-year Master Digital Design (MDD).',
         program_short: `
-          <p>
-            Detailed schedule to be announced.
-          </p>
           <a href="/about/#master-digital-design" class="button">
             Learn more <span class="sr-only">about the Master Digital Design</span>
           </a>
@@ -28,9 +25,6 @@ export const data = {
         title: 'Frontend Design and Development (FDND)',
         intro: 'On the fourth floor you can find all the end products of the students of the two-year Associate Degree Frontend Design and Development (FDND).',
         program_short: `
-        <p>
-          Detailed schedule to be announced.
-        </p>
         <a href="/about/#frontend-design-and-development" class="button">
           Learn more <span class="sr-only">about the Frontend Design and Development</span>
         </a>
@@ -44,9 +38,6 @@ export const data = {
         title: 'Communication and Multimedia Design (CMD)',
         intro: 'The third floor houses the best student work of the Communication and Multimedia Design (CMD) programme. The work was nominated by the CMD teachers last year.',
         program_short: `
-        <p>
-          Detailed schedule to be announced.
-        </p>
         <a href="/about/#communication-and-multimedia-design" class="button">
           Learn more <span class="sr-only">about the Communication and Multimedia Design</span>
         </a>
@@ -77,9 +68,7 @@ export const data = {
         title: 'Talks',
         intro: 'On the second floor, our teachers will present a number of fun and important talks for all visitors.',
         program_short: `
-        <p>
-          Talks to be announced.
-        </p>
+        
         `
       }
     },

@@ -1,6 +1,5 @@
+
 <svg
-  width="99"
-  height="22"
   viewBox="0 0 99 22"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
@@ -31,3 +30,10 @@
     />
   </g>
 </svg>
+
+
+<style>
+  svg {
+    bottom: -60% !important;
+  }
+</style>

@@ -1,6 +1,4 @@
 <svg
-  width="100"
-  height="42"
   viewBox="0 0 100 42"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
@@ -34,8 +32,8 @@
 
 <style>
   svg {
-    width: 140% !important;
-    left: -15% !important;
-    bottom: -30% !important;
+    width: 160% !important;
+    left: -30% !important;
+    bottom: -10% !important;
   }
 </style>

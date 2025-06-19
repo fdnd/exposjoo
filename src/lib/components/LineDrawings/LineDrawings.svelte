@@ -37,32 +37,35 @@
 
 <style lang="scss">
   .line-drawing {
+    --delay: 0s;
     width: 100%;
     height: 100%;
     color: var(--accent-color);
     opacity: 0;
     :global(.draw-me) {
-      transition: stroke-dashoffset var(--duration) ease-out,
-        opacity 0s var(--duration) ease-out;
+      transition: stroke-dashoffset var(--duration) ease-out;
       stroke-dashoffset: var(--total-length);
+      transition-delay: var(--delay);
     }
     :global(g[mask]:nth-child(2) .draw-me) {
       --delay: 0.1s;
-      transition-delay: var(--delay);
     }
     :global(g[mask]:nth-child(3) .draw-me) {
       --delay: 0.2s;
-      transition-delay: var(--delay);
     }
     :global(g[mask]:nth-child(4) .draw-me) {
       --delay: 0.3s;
-      transition-delay: var(--delay);
     }
   }
+  :global(.line-drawing) {
+    transition: opacity 0s 0.6s ease-out;
+  }
+  
   :global(a:hover .line-drawing),
   :global(a.is-active .line-drawing),
   :global([id]:target .line-drawing) {
     opacity: 1;
+    transition: opacity 0s ease-out;
   }
   :global(a:hover .draw-me),
   :global(a.is-active .draw-me) {

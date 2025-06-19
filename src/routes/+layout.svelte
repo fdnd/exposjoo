@@ -14,10 +14,28 @@
   let isOpen = $state(false);
   let navItems = [
     {
-      name: "About",
+      name: 'Schedule',
+      href: `${base}/schedule`,
+      line: 'Underline1',
+      duration: '0.4s',
+    },
+    {
+      name: 'Catering',
+      href: `${base}/catering`,
+      line: 'Underline2',
+      duration: '0.4s',
+    },
+    {
+      name: 'About',
       href: `${base}/about`,
-      line: "Underline2",
-      duration: "0.4s",
+      line: 'Underline3',
+      duration: '0.4s',
+    },
+    {
+      name: 'Contact',
+      href: `${base}/contact`,
+      line: 'Underline4',
+      duration: '0.4s',
     },
   ];
 
