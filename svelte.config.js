@@ -3,12 +3,22 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 
 export default {
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      fallback: '404.html'
+    }),
     prerender: {
-      entries: ['/', '/about']
+      entries: ['/', '/about/', '/404/'],
+      handleHttpError: ({ _path, _referrer, message }) => {
+        // Ignore 404s for missing pages during prerender
+        if (message.includes('404')) {
+          return
+        }
+        // Throw other errors
+        throw new Error(message)
+      }
     },
     paths: {
-      base: ''
+      base: '/exposjoo'
     }
   },
   preprocess: vitePreprocess()
