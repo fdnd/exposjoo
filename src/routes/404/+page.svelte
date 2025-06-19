@@ -34,7 +34,7 @@
   <meta name="twitter:image" content="https://exposjoo.nl/social-image.jpg" />
 </svelte:head>
 
-<Intro text="error - 404" />
+<Intro text="error 404" />
 <div class="text">
   <Text textContainers={data.textContainers} />
 </div>

@@ -37,7 +37,7 @@
 
 </svelte:head>
 
-<Intro text="error - 404" />
+<Intro text="error 404" />
 <div class="text">
   <Text textContainers={data.textContainers} />
 </div>
