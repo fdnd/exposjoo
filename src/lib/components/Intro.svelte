@@ -6,7 +6,7 @@
   import { isClientNavigation } from '$lib/stores/navigation'
 
   const emit = createEventDispatcher()
-  
+  export let text = 'Exposjoo'
   let intro
   let titleCount = 6
   let orientation = 'landscape' // Default value
@@ -51,14 +51,14 @@
       recalcSizes()
     })
     const tl = gsap.timeline()
-    tl.to('h1', {
+    tl.to('.intro h1', {
       y: 0,
       duration: 1,
       stagger: -0.05,
       ease: gentleEase,
     })
     tl.to(
-      'h1 .intro__title',
+      '.intro h1 .intro__title',
       {
         y: orientation === 'landscape' ? '65%' : '20%',
         duration: 1,
@@ -67,7 +67,7 @@
       },
       '<',
     )
-    tl.to(`h1:not(${sizes.largerItems[0]}, ${sizes.largerItems[1]})`, {
+    tl.to(`.intro h1:not(${sizes.largerItems[0]}, ${sizes.largerItems[1]})`, {
       clipPath: `inset(${sizes.smallerClip / 2}svh 0)`,
       y: (i) => `${getTranslate(i)}svh`,
       duration: 1,
@@ -75,7 +75,7 @@
       ease: 'power2.inOut',
     })
     tl.to(
-      `h1:not(${sizes.largerItems[0]}, ${sizes.largerItems[1]}) .intro__title`,
+      `.intro h1:not(${sizes.largerItems[0]}, ${sizes.largerItems[1]}) .intro__title`,
       {
         y: orientation === 'landscape' ? '70%' : '50%',
         duration: 1,
@@ -84,7 +84,7 @@
       '<',
     )
     tl.to(
-      `h1${sizes.largerItems[0]}, h1${sizes.largerItems[1]}`,
+      `.intro h1${sizes.largerItems[0]}, .intro h1${sizes.largerItems[1]}`,
       {
         clipPath: `inset(${sizes.largerClip / 2}svh 0)`,
         y: (i) => {
@@ -103,7 +103,7 @@
       '<',
     )
     tl.to(
-      `h1${sizes.largerItems[0]} .intro__title`,
+      `.intro h1${sizes.largerItems[0]} .intro__title`,
       {
         y: '40%',
         duration: 1,
@@ -112,7 +112,7 @@
       '<',
     )
     tl.to(
-      `h1${sizes.largerItems[1]} .intro__title`,
+      `.intro h1${sizes.largerItems[1]} .intro__title`,
       {
         y: orientation === 'landscape' ? '-110%' : '-80%',
         duration: 1,
@@ -121,7 +121,7 @@
       '<',
     )
     tl.to(
-      'h1',
+      '.intro h1',
       {
         y: 0,
         clipPath: 'inset(0svh 0)',
@@ -131,7 +131,7 @@
       '+=0.5',
     )
     tl.to(
-      'h1 .intro__title',
+      '.intro h1 .intro__title',
       {
         y: orientation === 'landscape' ? '65%' : '20%',
         duration: 1,
@@ -139,13 +139,13 @@
       },
       '<',
     )
-    tl.to('h1:nth-child(odd) .intro__title', {
+    tl.to('.intro h1:nth-child(odd) .intro__title', {
       x: '115%',
       duration: 1,
       ease: 'power2.inOut',
     })
     tl.to(
-      'h1:nth-child(even) .intro__title',
+      '.intro h1:nth-child(even) .intro__title',
       {
         x: '-115%',
         duration: 1,
@@ -206,7 +206,7 @@
       <h1 class="xlarge-heading" style="--index: {titleCount - 1 - i};">
         <span class="intro__title">
           <span class="inner">
-            <span>exposjoo</span>
+            <span>{text}</span>
             <ErrorLine />
           </span>
         </span>
@@ -240,6 +240,7 @@
       line-height: var(--height);
       margin-left: -0.1em;
       will-change: clip-path, transform;
+      white-space: nowrap;
 
       .intro__title {
         display: block;

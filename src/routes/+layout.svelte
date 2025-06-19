@@ -121,7 +121,7 @@
       list-style-type: "";
       gap: var(--gap);
       padding: 0;
-      @media (max-width: 750px) {
+      @media (max-width: 900px) {
         position: absolute;
         top: 4rem;
         right: var(--padding);
@@ -193,7 +193,7 @@
         background-color: #fff;
         color: #000;
       }
-      @media (max-width: 750px) {
+      @media (max-width: 900px) {
         position: fixed;
         bottom: var(--padding);
         z-index: 10;
@@ -230,7 +230,7 @@
           transform 0.4s var(--bouncy-ease),
           opacity 0.4s var(--bouncy-ease);
       }
-      @media (max-width: 750px) {
+      @media (max-width: 900px) {
         display: block;
       }
     }

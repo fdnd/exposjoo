@@ -1,29 +1,16 @@
 <script>
   import Intro from "$lib/components/Intro.svelte";
-  import Building from "$lib/components/Building.svelte";
-  import IntroText from "$lib/components/IntroText.svelte";
-  import { onMount } from "svelte";
-  import { data } from "./data";
+  import Text from "$lib/components/Text.svelte";
+  import { page } from '$app/stores'
+  import { data } from './data'
+  // get the error code
+  const errorCode = $page.status
 
-  let buildingComponent;
-  let introComplete = false;
-
-  function handleIntroComplete() {
-    introComplete = true;
-    if (buildingComponent) {
-      buildingComponent.startBuildingAnimation();
-    }
-  }
-
-  onMount(() => {
-    if (introComplete && buildingComponent) {
-      buildingComponent.startBuildingAnimation();
-    }
-  });
+  data.textContainers[0].title = `Error ${errorCode} —  ${data.textContainers[0].title}`
 </script>
 
 <svelte:head>
-  <title>Exposjoo - a typical Amsterdam digital design sjoo</title>
+  <title>404 - Exposjoo - a typical Amsterdam digital design sjoo</title>
   <meta
     name="description"
     content="Exposjoo is a typical Amsterdam digital design sjoo hosted by the Amsterdam University of Applied Sciences."
@@ -50,11 +37,10 @@
 
 </svelte:head>
 
-<Intro text="Exposjoo" on:introComplete={handleIntroComplete} />
+<Intro text="error - 404" />
 <div class="text">
-  <IntroText text={data.introText} />
+  <Text textContainers={data.textContainers} />
 </div>
-<Building bind:this={buildingComponent} courses={data.courses} />
 
 <style>
 </style>

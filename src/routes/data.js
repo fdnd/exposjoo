@@ -86,5 +86,16 @@ export const data = {
     //     </ul>`
     //   }
     // },
-  ]
+  ],
+  textContainers: [
+    {
+      title: 'Something went wrong',
+      level: 'h1',
+      titleClass: 'large-heading',
+      textClass: 'medium-body',
+      text: [
+        'This page does not exist (anymore). Please check the URL or go back to the <a href="/">homepage</a>.'
+      ]
+    },
+  ],
 }
