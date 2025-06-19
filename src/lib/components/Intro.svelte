@@ -241,6 +241,7 @@
       margin-left: -0.1em;
       will-change: clip-path, transform;
       white-space: nowrap;
+      text-transform: lowercase;
 
       .intro__title {
         display: block;
