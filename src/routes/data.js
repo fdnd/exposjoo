@@ -10,16 +10,11 @@ export const data = {
       class: 'mdd',
       modal: {
         title: 'Master Digital Design (MDD)',
-        intro: 'The Master Digital Design seeks to educate (design) professionals who create, adapt, and apply design processes into interactive digital products. These professionals are driven by an ethical perspective on people, profit, and planet.',
+        intro: 'On the fourth floor you can find all the end products of the projects of the students of the one-year Master Digital Design (MDD).',
         program_short: `
-        <ul>
-          <li>
-            During the Exposjoo students will present their work and research between 17.00h and 19.00 (5 - 7pm).
-          </li>
-          <li>
-            Attend one of our guided tours between 19.00h and 20.00h (7 - 8pm), a new tour starts every 15 minutes.
-          </li>
-          </ul>
+          <p>
+            Detailed schedule to be announced.
+          </p>
           <a href="/about/#master-digital-design" class="button">
             Learn more <span class="sr-only">about the Master Digital Design</span>
           </a>
@@ -31,16 +26,11 @@ export const data = {
       class: 'fdnd',
       modal: {
         title: 'Frontend Design and Development (FDND)',
-        intro: 'The Frontend Design and Development program is a 2-year associate degree program that works closely with real clients and prepares students for a career in the frontend development industry.',
+        intro: 'On the fourth floor you can find all the end products of the students of the two-year Associate Degree Frontend Design and Development (FDND).',
         program_short: `
-        <ul>
-          <li>
-            During the Exposjoo students will present their work and research between 17.00h and 19.00 (5 - 7pm).
-          </li>
-          <li>
-            Attend one of our guided tours between 19.00h and 20.00h (7 - 8pm), a new tour starts every 15 minutes.
-          </li>
-        </ul>
+        <p>
+          Detailed schedule to be announced.
+        </p>
         <a href="/about/#frontend-design-and-development" class="button">
           Learn more <span class="sr-only">about the Frontend Design and Development</span>
         </a>
@@ -52,16 +42,11 @@ export const data = {
       class: 'cmd',
       modal: {
         title: 'Communication and Multimedia Design (CMD)',
-        intro: 'The Communication and Multimedia Design program is a 4-year bachelor degree program for interaction and user experience design. Students learn to design and develop interactive digital products and services.',
+        intro: 'The third floor houses the best student work of the Communication and Multimedia Design (CMD) programme. The work was nominated by the CMD teachers last year.',
         program_short: `
-        <ul>
-          <li>
-            During the Exposjoo students will present their work and research between 17.00h and 19.00 (5 - 7pm).
-          </li>
-          <li>
-            Attend one of our guided tours between 19.00h and 20.00h (7 - 8pm), a new tour starts every 15 minutes.
-          </li>
-        </ul>
+        <p>
+          Detailed schedule to be announced.
+        </p>
         <a href="/about/#communication-and-multimedia-design" class="button">
           Learn more <span class="sr-only">about the Communication and Multimedia Design</span>
         </a>
@@ -90,13 +75,12 @@ export const data = {
       class: 'talks',
       modal: {
         title: 'Talks',
-        intro: 'Attend one of the talks from our teachers and researchers.',
+        intro: 'On the second floor, our teachers will present a number of fun and important talks for all visitors.',
         program_short: `
-        <ul>
-          <li>
-            Talks TBD
-          </li>
-        </ul>`
+        <p>
+          Talks to be announced.
+        </p>
+        `
       }
     },
     // {

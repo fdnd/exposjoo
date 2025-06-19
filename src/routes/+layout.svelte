@@ -1,5 +1,6 @@
 <script>
   import { Logo, HvA, MenuTrigger, Close } from "$lib/svgs";
+  // import RegisterForm from "$lib/components/RegisterForm.svelte";
   import { beforeNavigate } from "$app/navigation";
   import { isClientNavigation } from "$lib/stores/navigation";
   import { base } from "$app/paths";
@@ -54,7 +55,8 @@
     </ul>
   </nav>
   <div class="right">
-    <button class="button" onclick={openRegisterForm}> Register </button>
+    <!-- <button class="button" onclick={openRegisterForm}> Register </button> -->
+    <a href="https://assets-eur.mkt.dynamics.com/7c8e8ad8-52ca-ed11-aece-0022489e3349/digitalassets/standaloneforms/4fbea2b4-af4a-f011-877a-000d3ab670f1?readableEventId=Exposjoo_20253465078783" target="_blank" class="button"> Register </a>
     <a href="https://hva.nl" class="hva">
       <HvA />
     </a>
@@ -73,22 +75,8 @@
 <main>
   <slot />
 </main>
+<!-- <RegisterForm /> -->
 
-<dialog class="register-form">
-  <button class="close-button" onclick={closeRegisterForm}>
-    <Close />
-    <span class="sr-only">Close popup</span>
-  </button>
-  <h1 class="medium-heading">Register for the Exposjoo</h1>
-  <div
-    data-form-id="4fbea2b4-af4a-f011-877a-000d3ab670f1"
-    data-form-api-url="https://public-eur.mkt.dynamics.com/api/v1.0/orgs/7c8e8ad8-52ca-ed11-aece-0022489e3349/eventmanagement"
-    data-cached-form-url="https://assets-eur.mkt.dynamics.com/7c8e8ad8-52ca-ed11-aece-0022489e3349/digitalassets/forms/4fbea2b4-af4a-f011-877a-000d3ab670f1"
-  ></div>
-  <script
-    src="https://cxppusa1formui01cdnsa01-endpoint.azureedge.net/eur/FormLoader/FormLoader.bundle.js"
-  ></script>
-</dialog>
 
 <style lang="scss">
   .header {

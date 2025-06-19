@@ -50,6 +50,9 @@
         display: inline-block;
         margin-top: 1em;
       }
+      &:last-child {
+        margin-bottom: var(--gap);
+      }
     }
   }
 </style>
