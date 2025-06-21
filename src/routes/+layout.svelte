@@ -208,7 +208,7 @@
       display: none;
       cursor: pointer;
       transform-box: fill-box;
-      &.is-open {
+      &:global(.is-open) {
         :global(path:nth-of-type(1)) {
           transform: rotate(-45deg);
         }
