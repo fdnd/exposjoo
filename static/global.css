@@ -1,10 +1,8 @@
 :root {
   --design-size: 1440;
-
   --background: #fff;
   --accent-color: #ff0000;
-
-  --line-width: max(11px, calc(14/var(--design-size) * 100vw));
+  --line-width: max(14px, calc(14/var(--design-size) * 100vw));
   --padding: max(1rem, calc(16/var(--design-size) * 100vw));
   --gap: calc(var(--padding) * 2);
   --bouncy-ease: cubic-bezier(0.47, 0, 0.23, 1.38);
@@ -19,6 +17,8 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+  min-height: 100svh;
 }
 
 button {
@@ -42,6 +42,7 @@ button {
   letter-spacing: -0.04em;
   font-weight: 600;
 }
+
 .medium-heading {
   font-size: max(1.5rem, calc(32/var(--design-size) * 100vw));
   line-height: 1.1;
@@ -81,32 +82,28 @@ button {
   text-transform: lowercase;
   text-decoration: none;
   display: inline-block;
-
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   box-shadow: 0 0 0 var(--accent-color);
   transition: box-shadow 0.3s ease;
+}
 
-  &:hover {
-    box-shadow: 2px 2px 0 0 var(--accent-color);
-  }
-
+.button:hover {
+  box-shadow: 2px 2px 0 0 var(--accent-color);
 }
 
 a {
   color: inherit;
 }
 
-.p {
-  .large-heading+.medium-body,
-  .large-heading+.small-body,
-  .medium-heading+.medium-body,
-  .medium-heading+.small-body,
-  .medium-body+.medium-body,
-  .medium-body+.small-body,
-  .small-body+.medium-body,
-  .small-body+.small-body {
-    margin-top: 1em;
-  }
+.p .large-heading + .medium-body,
+.p .large-heading + .small-body,
+.p .medium-heading + .medium-body,
+.p .medium-heading + .small-body,
+.p .medium-body + .medium-body,
+.p .medium-body + .small-body,
+.p .small-body + .medium-body,
+.p .small-body + .small-body {
+  margin-top: 1em;
 }
 
 .sr-only {
@@ -116,10 +113,8 @@ a {
   height: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
-  /* for IE only */
   clip-path: inset(50%);
 }
-
 
 dialog {
   display: none;
@@ -131,69 +126,69 @@ dialog {
   padding: var(--gap);
   background-color: #fff;
   transition-behavior: allow-discrete;
-  transition:
-    transform 0.5s var(--bouncy-ease),
-    display 1s allow-discrete,
-    overlay 1s allow-discrete;
+  transition: transform 0.5s var(--bouncy-ease), display 1s allow-discrete, overlay 1s allow-discrete;
   transform: translateY(calc(100svh + var(--padding)));
   border: 2px solid #000;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
 
-  @media (max-width: 750px) {
+@media (max-width: 750px) {
+  dialog {
     width: calc(100% - var(--padding) * 2);
     max-width: 30rem;
   }
-  
-  .button {
-    margin-top: 1em;
-  }
-  
-  &::backdrop {
-    opacity: 0;
-    transition: opacity 0.5s var(--bouncy-ease);
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  &[open] {
-    display: block;
-    transform: translateY(0);
-    
-    &::backdrop {
-      opacity: 1;
-    }
-    
-    @starting-style {
-      transform: translateY(calc(100svh + var(--padding)));
-    }
-  }
-  
-  svg {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-  
-  .close-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: none;
-    border: none;
-    padding: var(--padding);
-    margin: 0;
-    cursor: pointer;
-    
-    &:focus {
-      outline: none;
-      color: var(--accent-color);
-    }
-    svg {
-      fill: currentColor;
-    }
-  }
+}
 
+dialog .button {
+  margin-top: 1em;
+}
 
+dialog::backdrop {
+  opacity: 0;
+  transition: opacity 0.5s var(--bouncy-ease);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog[open] {
+  display: block;
+  transform: translateY(0);
+}
+
+dialog[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  dialog[open] {
+    transform: translateY(calc(100svh + var(--padding)));
+  }
+}
+
+dialog svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+dialog .close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  padding: var(--padding);
+  margin: 0;
+  cursor: pointer;
+}
+
+dialog .close-button:focus {
+  outline: none;
+  color: var(--accent-color);
+}
+
+dialog .close-button svg {
+  fill: currentColor;
 }
 
 h2 {
   scroll-margin-top: max(8rem, calc(120 / var(--design-size) * 100vw));
-}
+} 

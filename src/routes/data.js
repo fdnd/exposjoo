@@ -8,6 +8,8 @@ export const data = {
     {
       name: 'MDD',
       class: 'mdd',
+      size: 'span 1',
+      color: 'rgba(0, 0, 0, 0.25)',
       modal: {
         title: 'Master Digital Design (MDD)',
         intro: 'On the fourth floor you can find all the end products of the projects of the students of the one-year Master Digital Design (MDD).',
@@ -21,9 +23,11 @@ export const data = {
     {
       name: 'FDND',
       class: 'fdnd',
+      size: 'span 2',
+      color: '#c5aded',
       modal: {
         title: 'Frontend Design and Development (FDND)',
-        intro: 'On the fourth floor you can find all the end products of the students of the two-year Associate Degree Frontend Design and Development (FDND).',
+        intro:  'On the fourth floor you can find all the end products of the students of the two-year Associate Degree Frontend Design and Development (FDND).',
         program_short: `
         <a href="/about/#frontend-design-and-development" class="button">
           Learn more <span class="sr-only">about the Frontend Design and Development</span>
@@ -34,6 +38,8 @@ export const data = {
     {
       name: 'CMD',
       class: 'cmd',
+      size: 'span 3',
+      color: '#ffcc00',
       modal: {
         title: 'Communication and Multimedia Design (CMD)',
         intro: 'The third floor houses the best student work of the Communication and Multimedia Design (CMD) programme. The work was nominated by the CMD teachers last year.',
@@ -64,6 +70,8 @@ export const data = {
     {
       name: 'Talks',
       class: 'talks',
+      size: 'span 3',
+      color: '#5FCE67',
       modal: {
         title: 'Talks',
         intro: 'On the second floor, our teachers will present a number of fun and important talks for all visitors.',

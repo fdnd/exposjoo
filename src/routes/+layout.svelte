@@ -9,7 +9,7 @@
   import { openRegisterForm, closeRegisterForm } from "$lib/index.js";
   
 
-  let lineDrawings = [];
+  let lineDrawings = $state([]);
 
   let isOpen = $state(false);
   let navItems = [

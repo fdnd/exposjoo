@@ -1,6 +1,5 @@
 <script>
   import { LocationPin, Calendar } from '$lib/svgs'
-  import { openRegisterForm } from '$lib/index.js'
 
   export let text
 </script>
@@ -21,13 +20,15 @@
   </p>
 </section>
 
-<style>
+<style lang="scss">
   .text {
     position: absolute;
     max-width: max(30rem, calc(480 / var(--design-size) * 100vw));
-    margin-top: max(4rem, calc(80 / var(--design-size) * 100vw));
-    padding: 0 var(--padding);
+    padding: max(4rem, calc(80 / var(--design-size) * 100vw)) var(--padding) 0;
     text-wrap: balance;
+    @media (max-width: 1024px) {
+      position: static;
+    }
     a {
       display: flex;
       align-items: center;
@@ -39,13 +40,13 @@
       width: 1.25em;
       height: 1.25em;
     }
-    button {
+    /* button {
       padding: 0;
       background: none;
       border: none;
       cursor: pointer;
       color: inherit;
       
-    }
+    } */
   }
 </style>

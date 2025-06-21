@@ -20,7 +20,7 @@
   }
 </script>
 
-<dialog class="modal p" data-course={course.class} bind:this={modal} style="--random-border-radius: {generateRandomBorderRadius()}">
+<dialog closedby="any" class="modal p" data-course={course.class} bind:this={modal} style="--random-border-radius: {generateRandomBorderRadius()}">
   <button
     class="close-button"
     on:click={() => {

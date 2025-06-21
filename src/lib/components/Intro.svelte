@@ -27,7 +27,7 @@
   onMount(() => {
     const mm = gsap.matchMedia()
     // Only skip intro on client navigation
-    if ($isClientNavigation) {
+    if (!CSS.supports('height: 100svh') || $isClientNavigation) {
       emit('introComplete')
       isVisible = false
       return
@@ -234,6 +234,7 @@
     background-color: var(--background);
     h1 {
       --height: calc(100svh / var(--title-count));
+      max-height: calc(100vh / var(--title-count));
       height: var(--height);
       clip-path: inset(0 0);
       transform: translateY(calc(var(--height) * var(--index))) translateZ(1px);

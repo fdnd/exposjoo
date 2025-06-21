@@ -22,9 +22,6 @@
       });
     });
 
-    buttons.forEach((button) => {
-      positionButtons(button);
-    });
     // only resize if the window is done resizing for 100ms otherwise cancel the timeout and wait for the next resize
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimeout);
@@ -101,6 +98,7 @@
 
   export const startBuildingAnimation = () => {
     // Add your building animation here
+    positionButtons();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
       gsap.fromTo(
         buildingElement,
@@ -118,16 +116,63 @@
         stagger: {
           amount: -0.25,
         },
+        onComplete: () => {
+          playButtons();
+        },
       });
+    });
+
+    mm.add("(prefers-reduced-motion: reduce)", () => {
+      playButtons();
+    });
+  };
+
+  const playButtons = () => {
+    buttons.forEach((button, i) => {
+      const course = button.dataset.course;
+      const windowElement = buildingElement.querySelector(`g.${course}`,);
+      const tl = gsap.timeline()
+      tl.set([button, windowElement], {
+        transition: 'none',
+      })
+      tl.to(button, {
+          opacity: window.innerWidth > 1024 ? 1 : null,
+          background: window.innerWidth > 1024 ? null : button.dataset.color,
+          duration: 0.35,
+          ease: "power1.inOut",
+        }, 1.4 * i)
+        .to(windowElement, {
+          opacity: 1,
+          duration: 0.35,
+          ease: "power1.inOut",
+        }, '<')
+        .to(button, {
+          background: window.innerWidth > 1024 ? null : "#fff",
+          opacity: window.innerWidth > 1024 ? 0 : null,
+          duration: 0.35,
+          ease: "power1.inOut",
+        }, '+=0.35')
+        .to(windowElement, {
+          opacity: 0,
+          duration: 0.35,
+          ease: "power1.inOut",
+          onComplete: () => {
+            tl.revert();
+          }
+        }, '<');
     });
   };
 
   const openModal = (course) => {
-    const modal = buildingElement.querySelector(
+    const modal = document.querySelector(
       `.modal[data-course="${course}"]`,
     );
     if (!modal) return;
-    modal.showModal();
+    if (modal.showModal) {
+      modal.showModal();
+    } else {
+      modal.setAttribute("open", "");
+    }
     positionButtons();
   };
 </script>
@@ -138,9 +183,13 @@
   style="anchor-scope: {anchorScope};"
 >
   <Building />
+</section>
+<div class="buttons">
   {#each courses as course, i}
     <button
-      class={`button medium-body ${course.class}`}
+      class={`button course-button medium-body ${course.class}`}
+      style="--size: {course.size}; --color: {course.color}"
+      data-color={course.color}
       data-course={course.class}
       bind:this={buttons[i]}
       on:click={() => openModal(course.class)}
@@ -149,7 +198,7 @@
     </button>
     <Modal {course} />
   {/each}
-</section>
+</div>
 
 <style lang="scss">
   $courses: mdd, fdnd, cmd, applied-research, job-market, talks;
@@ -183,7 +232,13 @@
     :global(.hover-rect) {
       cursor: pointer;
     }
+    :global(body:has(.course-button[data-course="#{$course}"]:focus)) {
+      :global(g.#{$course}) {
+        opacity: 1;
+      }
+    }
   }
+
 
   :global(.building-svg) {
     pointer-events: none;
@@ -200,27 +255,62 @@
   .building {
     opacity: 0;
     width: 100%;
+    height: 100vh;
     height: 100svh;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: end;
     transform-origin: center;
+    pointer-events: none;
     @media (max-width: 750px) {
       border-bottom: 70px solid #dbdbdb;
     }
+    @media (max-width: 1024px) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    :global(svg) {
+      margin-top: auto;
+      pointer-events: all;
+    }
   }
-
+  .buttons {
+    @media (max-width: 1024px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--padding);
+      padding: var(--gap) var(--padding) 0;
+      max-width: max(30rem, 480 / var(--design-size) * 100vw);
+      margin: 0 auto;
+    }
+  }
   .button {
     position: absolute;
-
+    opacity: 0;
+    pointer-events: none;
     width: max-content;
     height: max-content;
 
     transform-origin: center;
-    opacity: 0;
     transition: opacity 0.2s ease-in-out;
-    pointer-events: none;
+    @media (max-width: 1024px) {
+      position: static !important;
+      transform: none !important;
+      opacity: 1;
+      grid-column: var(--size);
+      width: 100%;
+      background-color: #fff;
+      color: #000;
+      pointer-events: all;
+      box-shadow: 0 0 0 0 #000;
+
+      &:hover {
+        background-color: var(--color);
+        box-shadow: 2px 2px 0 0 #000;
+      }
+    }
     &:focus-visible {
       opacity: 1;
     }
