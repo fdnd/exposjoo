@@ -6,7 +6,7 @@ export const data = {
       titleClass: 'large-heading',
       textClass: 'medium-body',
       text: [
-        'Just like last academic year, we want to close this academic year with the Exposjoo: an evening in which we proudly present the student work of the Associate Degreed Frontend Design and Development, the Master Digital Design and the Bachelor Communication and Multimedia Design.',
+        'Just like last academic year, we want to close this academic year with the Exposjoo: an evening in which we proudly present the student work of the Associate Degree Frontend Design and Development, the Master Digital Design and the Bachelor Communication and Multimedia Design.',
         'In addition, our lecturers as well as the Centre for Applied Research (Faculty of Digital Media and Creative Industries) will give a number of short talks with updates from our field. We will also give our external industry partners the opportunity to get in touch with our students and teachers this evening. In this way, we bring education, research and business around digital design and development together in the Theo Thijssenhuis.'
       ]
     },
