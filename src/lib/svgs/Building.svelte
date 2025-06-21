@@ -1,3 +1,21 @@
+<script>
+  import { onMount } from 'svelte';
+  import { WindowMDD, WindowFDND, WindowCMD, WindowTalks } from './index.js';
+  let showClass = '';
+
+  onMount(() => {
+    if (typeof window !== 'undefined' && window.location.search.includes('?show-vids')) {
+      showClass = 'show';
+    }
+  });
+</script>
+
+<div class="clip-paths">  
+  <WindowMDD />
+  <WindowFDND />
+  <WindowCMD />
+  <WindowTalks />
+</div>
 <svg
   preserveAspectRatio="xMaxYMax meet"
   viewBox="0 0 2015 1010"
@@ -11,12 +29,12 @@
       <polygon id="Path" fill-opacity="0.25" fill="#000000" fill-rule="nonzero" points="2.25428372 63.9163748 2.25428372 22.9704288 129.606808 14.6892262 129.606808 57.4754395 120.902858 56.0952391 63.1819301 58.8556399"></polygon>
       <polygon id="Path-2" fill-opacity="0.25" fill="#000000" fill-rule="nonzero" points="139.226962 58.8556399 139.226962 12.3888922 167.629324 8.70835771 253.752613 4.10768962 275.741538 1.34728877 275.741538 24.3506292 273.909128 49.1942369"></polygon>
       <polygon id="mdd-hover" class="hover-rect" transform="translate(139.5147, 33) rotate(-3) translate(-139.5147, -33)" points="1.17186464 7.26756258 277.869087 7.20555735 277.857589 58.7324374 1.16036698 58.7944427"></polygon>
-  </g>
+    </g>
   <g class="fdnd" stroke-width="1" fill-rule="evenodd" transform="translate(976.9839, 373)">
-      <polygon id="Path" stroke="#000000" fill="#c5aded" fill-rule="nonzero" points="6.54336107 102.220426 6.54336107 52.2206322 63.7621867 47.6334952 102.213238 44.4224992 155.312308 42.5876444 156.227809 94.422293 105.417492 99.0094301 66.5086904 99.0094301"></polygon>
-      <polygon id="Path" stroke="#000000" fill="#c5aded" fill-rule="nonzero" points="474.82223 75.6150311 337.039298 84.3305915 335.208296 57.7251967 337.039298 26.9913785 441.406436 19.1932455 509.153526 16.899677 507.780274 27.9088059 509.153526 43.0463581 506.864773 73.3214626"></polygon>
-      <polygon id="Path" stroke="#000000" fill="#c5aded" fill-rule="nonzero" points="166.298322 93.0461519 166.298322 40.7527896 324.680032 28.8262333 326.968785 53.5967733 324.680032 82.4957367 314.151768 84.7893052"></polygon>
-      <polygon id="Path" stroke="#000000" fill="#c5aded" fill-rule="nonzero" points="521.055041 69.651753 522.428293 15.5235358 577.816116 12.7712536 669.823988 6.80797545 706.444036 5.43183434 706.444036 61.3949063 700.035528 61.3949063"></polygon>
+      <polygon id="Path" fill="#9747FF" fill-rule="nonzero" points="6.54336107 102.220426 6.54336107 52.2206322 63.7621867 47.6334952 102.213238 44.4224992 155.312308 42.5876444 156.227809 94.422293 105.417492 99.0094301 66.5086904 99.0094301"></polygon>
+      <path d="M474.82223,75.6150311 L337.039298,84.3305915 L335.208296,57.7251967 L337.039298,26.9913785 L441.406436,19.1932455 C458.555403,18.0219219 471.425281,17.29084 480.016071,17 C488.606861,16.70916 498.319346,16.675719 509.153526,16.899677 L507.780274,27.9088059 L509.153526,43.0463581 L506.864773,73.3214626 L474.82223,75.6150311 Z" id="Path" fill="#9747FF" fill-rule="nonzero"></path>
+      <polygon id="Path" fill="#9747FF" fill-rule="nonzero" points="166.298322 93.0461519 166.298322 40.7527896 324.680032 28.8262333 326.968785 53.5967733 324.680032 82.4957367 314.151768 84.7893052"></polygon>
+      <polygon id="Path" fill="#9747FF" fill-rule="nonzero" points="521.055041 69.651753 522.428293 15.5235358 577.816116 12.7712536 669.823988 6.80797545 708.016071 6 706.444036 61.3949063 700.035528 61.3949063"></polygon>
       <polygon id="fdnd-hover" class="hover-rect" transform="translate(356.0161, 55) rotate(-4) translate(-356.0161, -55)" points="1.26014339 24.7771443 710.780845 24.6732653 710.771999 85.2228557 1.25129692 85.3267347"></polygon>
   </g>
   <g class="cmd" stroke-width="1" fill-rule="evenodd" transform="translate(698.9774, 471)">
@@ -31,11 +49,11 @@
   <g class="talks" stroke-width="1" fill-rule="evenodd" transform="translate(698.8069, 570)">
       <polygon id="Path" fill="#5FCE67" fill-rule="nonzero" points="1.62877944 80.6077432 2.08622085 35.6405181 127.425169 29.2166288 128.797493 48.4882967 127.425169 75.5604016 78.4789374 79.6900447"></polygon>
       <polygon id="Path" fill="#5FCE67" fill-rule="nonzero" points="139.318646 76.4781001 137.946322 31.0520257 196.041381 29.2166288 229.892046 27.3812318 272.891539 27.3812318 272.891539 68.677663 231.26437 70.9719092"></polygon>
-      <polygon id="talks-hover" class="hover-rect" transform="translate(493.4602, 45.8864) rotate(-2) translate(-493.4602, -45.8864)" points="0.970073944 15.438994 985.950404 15.4039276 985.930733 76.3688611 1.26695167 63.833635"></polygon>
       <polygon id="Path" fill="#5FCE67" fill-rule="nonzero" points="614.087415 65.5991355 614.087415 13.7378577 646.636402 13.7378577 708.525321 9.18862281 760.787075 6.00415839 788.293261 7.36892885 788.293261 23.7461745 786.459515 39.6684966 788.293261 61.9597476 779.124532 61.9597476 741.074308 64.2343651 646.636402 64.2343651"></polygon>
       <polygon id="Path" fill="#5FCE67" fill-rule="nonzero" points="797.46199 62.4146711 797.46199 8.73369932 882.272731 4.18446443 985.879366 1 985.879366 5.5492349 984.504057 26.4757154 982.211874 57.8654362 913.904845 59.6851302"></polygon>
       <polygon id="Path" fill="#5FCE67" fill-rule="nonzero" points="284.320337 73.3180492 284.320337 22.8602363 306.739146 22.8602363 364.84504 20.5666993 427.983727 20.5666993 433.016521 22.8602363 434.846628 53.5936314 433.016521 71.0245123 420.205773 70.1070975 369.420307 71.0245123"></polygon>
       <polygon id="Path" fill="#5FCE67" fill-rule="nonzero" points="538.247666 68.2722679 443.082109 68.2722679 442.167055 60.9329497 443.082109 25.1537732 441.252002 16.8970402 487.004674 14.1447958 600.4713 12.3099663 605.961621 12.3099663 605.046568 42.1259467 605.046568 65.978731 577.594964 66.8961457"></polygon>
+      <polygon id="talks-hover" class="hover-rect" transform="translate(493.4602, 45.8864) rotate(-2) translate(-493.4602, -45.8864)" points="0.970073944 15.438994 985.950404 15.4039276 985.930733 76.3688611 1.26695167 63.833635"></polygon>
   </g>
   <path d="M1129,746 C1128.05504,754.325309 1128.44683,756.921275 1128,760" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
   <path d="M1358.7702,749 C1361.93147,754.044315 1358,786.70877 1358,818" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -81,9 +99,9 @@
   <path d="M1139.75732,564.077358 C1138.87332,563.686303 1139.30432,564.505196 1139.74632,573" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
   <path d="M1302.486,555 C1302.152,565.835577 1302.287,566.114204 1302.702,567" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
   <path d="M1140,589 C1142.54908,592.670583 1139.2056,632.095944 1140.96282,638" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-  <path d="M1173.01803,587 C1172.74741,593.511073 1175.62472,637.70812 1174.87491,639" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-  <path d="M1204,587 C1204,634.041704 1203.99539,634.041704 1205,638" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-  <path d="M1237,586 C1238.32751,588.448073 1238.39671,628.8732 1240,637" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M1173,585 C1172.72938,591.511073 1175.62472,637.70812 1174.87491,639" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M1203.99999,585 C1203.99999,632.041704 1203.99539,634.041704 1204.99999,638" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M1237,584 C1238.32751,586.448073 1238.39671,629.8732 1240,638" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
   <path d="M1271.65691,583 C1272.11991,588.570711 1270.75691,635.735817 1271.44091,637" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
   <path d="M1304.97365,584 C1305.0541,585.302942 1305.00102,585.278307 1304.07539,613.858178 C1303.69966,625.439582 1304.89319,625.275346 1304.07539,637" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
   <path d="M1139.066,649 C1139.265,654.110471 1139.19,654.004803 1139.934,659" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -639,3 +657,80 @@
   <path d="M1995,144 C1995,153 1999.65402,183.48225 1998.90308,204.801678 C1996.44218,274.359737 1999.27569,271.200185 1998,341 C1996.83288,404.798947 2003.2187,406.400819 1999.90734,453.338178 C1995.3203,518.273563 2004.9739,545.555399 1996.62313,706.164021 C1996.44218,709.5248 1994.92222,812.280399 1997.4193,835" id="Path" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 </g>
 </svg>
+
+<div class="window-1 {showClass}" style="--clip-url: url(#mdd-window)">
+  <video src="/videos/people.mp4" autoplay loop muted playsinline></video>
+</div>
+<div class="window-2 {showClass}" style="--clip-url: url(#fdnd-window)">
+  <video src="/videos/party.mp4" autoplay loop muted playsinline></video>
+</div>
+<div class="window-3 {showClass}" style="--clip-url: url(#cmd-window)">
+  <video src="/videos/cmd.mp4" autoplay loop muted playsinline></video>
+</div>
+<div class="window-4 {showClass}" style="--clip-url: url(#talks-window)">
+  <video src="/videos/talk.mp4" autoplay loop muted playsinline></video>
+</div>
+
+
+<style lang="scss">
+  .clip-paths {
+    position: absolute;
+    bottom: 0;
+    width: 1px;
+    height: 1px;
+    --scale: 0.0004963;
+  }
+  
+  .window-1, .window-2, .window-3, .window-4 {
+    position: absolute;
+    bottom: -0.15px; // don't ask, clippaths are weird
+    width: 100%;
+    aspect-ratio: 2015/1010;
+    clip-path: var(--clip-url);
+    display: none;
+    &.show {
+      display: block;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      display: none;
+    }
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+  
+  .window-1 {
+    video {
+      width: 6%;
+      top: 42%;
+      left: 45%;
+    }
+  }
+  .window-2 {
+    background-color: hotpink;
+    video {
+      width: 7%;
+      top: 36%;
+      left: 75%;
+    }
+  }
+  .window-3 {
+    background-color: hotpink;
+    video {
+      width: 5%;
+      top: 50%;
+      left: 43.5%;
+    }
+  }
+  .window-4 {
+    background-color: hotpink;
+    video {
+      width: 4%;
+      top: 54%;
+      left: 61%;
+    }
+  }
+</style>

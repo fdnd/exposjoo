@@ -24,7 +24,7 @@ export const data = {
       name: 'FDND',
       class: 'fdnd',
       size: 'span 2',
-      color: '#c5aded',
+      color: '#9747FF',
       modal: {
         title: 'Frontend Design and Development (FDND)',
         intro:  'On the fourth floor you can find all the end products of the students of the two-year Associate Degree Frontend Design and Development (FDND).',

@@ -7,16 +7,19 @@
 
   let buildingComponent;
   let introComplete = false;
+  let buildingAnimationStarted = false;
 
   function handleIntroComplete() {
     introComplete = true;
-    if (buildingComponent) {
+    if (buildingComponent && !buildingAnimationStarted) {
+      buildingAnimationStarted = true;
       buildingComponent.startBuildingAnimation();
     }
   }
 
   onMount(() => {
-    if (introComplete && buildingComponent) {
+    if (introComplete && buildingComponent && !buildingAnimationStarted) {
+      buildingAnimationStarted = true;
       buildingComponent.startBuildingAnimation();
     }
   });

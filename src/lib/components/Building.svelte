@@ -128,33 +128,33 @@
   };
 
   const playButtons = () => {
+    // stop on interaction with elements of windows:
     buttons.forEach((button, i) => {
       const course = button.dataset.course;
       const windowElement = buildingElement.querySelector(`g.${course}`,);
       const tl = gsap.timeline()
+
       tl.set([button, windowElement], {
         transition: 'none',
       })
       tl.to(button, {
-          opacity: window.innerWidth > 1024 ? 1 : null,
           background: window.innerWidth > 1024 ? null : button.dataset.color,
-          duration: 0.35,
+          duration: 0.25,
           ease: "power1.inOut",
-        }, 1.4 * i)
+        }, 0.5 * i)
         .to(windowElement, {
           opacity: 1,
-          duration: 0.35,
+          duration: 0.25,
           ease: "power1.inOut",
         }, '<')
         .to(button, {
           background: window.innerWidth > 1024 ? null : "#fff",
-          opacity: window.innerWidth > 1024 ? 0 : null,
-          duration: 0.35,
+          duration: 0.25,
           ease: "power1.inOut",
-        }, '+=0.35')
+        }, '+=0.25')
         .to(windowElement, {
           opacity: 0,
-          duration: 0.35,
+          duration: 0.25,
           ease: "power1.inOut",
           onComplete: () => {
             tl.revert();
@@ -224,8 +224,8 @@
       opacity: 1;
     }
 
-    :global(.building:has(g.#{$course}:hover)) {
-      .button.#{$course} {
+    :global(body:has(g.#{$course}:hover)) {
+      .course-button.#{$course} {
         opacity: 1;
       }
     }
@@ -273,7 +273,6 @@
     }
     :global(svg) {
       margin-top: auto;
-      pointer-events: all;
     }
   }
   .buttons {
