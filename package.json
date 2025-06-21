@@ -3,6 +3,12 @@
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"safari >= 14",
+		"not dead"
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
