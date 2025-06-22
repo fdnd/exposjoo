@@ -675,7 +675,10 @@
 <style lang="scss">
   .clip-paths {
     position: absolute;
-    bottom: 0;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
     --scale: 0.0004963;
     :global(svg) {
       position: absolute;
