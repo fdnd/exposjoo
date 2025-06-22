@@ -111,7 +111,7 @@
           ease: "power2.out",
         },
       );
-      gsap.from(".building path", {
+      gsap.from(".building-svg path", {
         drawSVG: 0,
         stagger: {
           amount: -0.25,
