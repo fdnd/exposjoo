@@ -676,14 +676,18 @@
   .clip-paths {
     position: absolute;
     bottom: 0;
-    width: 1px;
-    height: 1px;
     --scale: 0.0004963;
+    :global(svg) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      
+    }
   }
   
   .window-1, .window-2, .window-3, .window-4 {
     position: absolute;
-    bottom: -0.15px; // don't ask, clippaths are weird
+    bottom: 0;
     width: 100%;
     aspect-ratio: 2015/1010;
     clip-path: var(--clip-url);
