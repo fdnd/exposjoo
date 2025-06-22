@@ -173,10 +173,12 @@
       gap: var(--padding);
     }
     .hva {
-      width: max(6rem, calc(180 / var(--design-size) * 100vw));
+      width: auto;
+      height: max(1.5rem, calc(36 / var(--design-size) * 100vw));
       :global(svg) {
         fill: currentColor;
-        width: 100%;
+        width: auto;
+        height: 100%;
       }
     }
     .button {

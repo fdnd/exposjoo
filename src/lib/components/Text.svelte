@@ -32,7 +32,7 @@
   .text {
     position: absolute;
     max-width: max(30rem, calc(820 / var(--design-size) * 100vw));
-    margin-top: max(8rem, calc(120 / var(--design-size) * 100vw));
+    margin-top: max(4rem, calc(80 / var(--design-size) * 100vw));
     padding: 0 var(--padding);
     .text-container {
       .medium-heading {
