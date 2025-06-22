@@ -276,7 +276,11 @@
     }
   }
   .buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
     @media (max-width: 1024px) {
+      position: static;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: var(--padding);

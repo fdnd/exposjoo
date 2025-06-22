@@ -192,3 +192,21 @@ dialog .close-button svg {
 h2 {
   scroll-margin-top: max(8rem, calc(120 / var(--design-size) * 100vw));
 } 
+
+.is-desktop {
+  display: block;
+}
+
+.is-mobile {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .is-desktop {
+    display: none;
+  }
+
+  .is-mobile {
+    display: block;
+  }
+}

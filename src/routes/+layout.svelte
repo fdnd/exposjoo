@@ -1,6 +1,6 @@
 <script>
   import { Logo, HvA, MenuTrigger, Close } from "$lib/svgs";
-  // import RegisterForm from "$lib/components/RegisterForm.svelte";
+  import RegisterForm from "$lib/components/RegisterForm.svelte";
   import { beforeNavigate } from "$app/navigation";
   import { isClientNavigation } from "$lib/stores/navigation";
   import { base } from "$app/paths";
@@ -73,8 +73,8 @@
     </ul>
   </nav>
   <div class="right">
-    <!-- <button class="button" onclick={openRegisterForm}> Register </button> -->
-    <a href="https://assets-eur.mkt.dynamics.com/7c8e8ad8-52ca-ed11-aece-0022489e3349/digitalassets/standaloneforms/4fbea2b4-af4a-f011-877a-000d3ab670f1?readableEventId=Exposjoo_20253465078783" target="_blank" class="button"> Register </a>
+    <button class="button is-desktop" onclick={openRegisterForm}> Register </button>
+    <a class="button is-mobile" href="https://assets-eur.mkt.dynamics.com/7c8e8ad8-52ca-ed11-aece-0022489e3349/digitalassets/standaloneforms/4fbea2b4-af4a-f011-877a-000d3ab670f1?readableEventId=Exposjoo_20253465078783" target="_blank"> Register </a>
     <a href="https://hva.nl" class="hva">
       <HvA />
     </a>
@@ -93,7 +93,7 @@
 <main>
   <slot />
 </main>
-<!-- <RegisterForm /> -->
+<RegisterForm />
 
 
 <style lang="scss">

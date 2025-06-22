@@ -42,7 +42,7 @@
   .modal {
     margin: auto var(--padding) var(--padding) auto;
     max-width: max(30rem, calc(480 / var(--design-size) * 100vw));
-    transform: translateY(calc(100% + var(--padding)));
+    transform: translateY(calc(70svh + var(--padding)));
     border-radius: var(--random-border-radius);
     @media (max-width: 750px) {
       width: calc(100% - var(--padding) * 2);
@@ -52,7 +52,7 @@
     &[open] {
       transform: translateY(0);
       @starting-style {
-        transform: translateY(calc(100% + var(--padding)));
+        transform: translateY(calc(70svh + var(--padding)));
       }
     }
   }
