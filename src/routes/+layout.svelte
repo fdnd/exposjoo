@@ -174,7 +174,7 @@
     }
     .hva {
       width: auto;
-      height: max(1.5rem, calc(36 / var(--design-size) * 100vw));
+      height: clamp(1.5rem, calc(36 / var(--design-size) * 100vw), 2.5rem);
       :global(svg) {
         fill: currentColor;
         width: auto;
