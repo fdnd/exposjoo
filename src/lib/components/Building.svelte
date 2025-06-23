@@ -139,6 +139,7 @@
       })
       tl.to(button, {
           background: window.innerWidth > 1024 ? null : button.dataset.color,
+          color: window.innerWidth > 1024 ? null : button.dataset.textColor,
           duration: 0.25,
           ease: "power1.inOut",
         }, 0.5 * i)
@@ -149,6 +150,7 @@
         }, '<')
         .to(button, {
           background: window.innerWidth > 1024 ? null : "#fff",
+          color: window.innerWidth > 1024 ? null : "#000",
           duration: 0.25,
           ease: "power1.inOut",
         }, '+=0.25')
@@ -188,8 +190,9 @@
   {#each courses as course, i}
     <button
       class={`button course-button medium-body ${course.class}`}
-      style="--size: {course.size}; --color: {course.color}"
+      style="--size: {course.size}; --color: {course.color}; --text-color: {course.textColor}"
       data-color={course.color}
+      data-text-color={course.textColor}
       data-course={course.class}
       bind:this={buttons[i]}
       on:click={() => openModal(course.class)}
@@ -311,6 +314,7 @@
 
       &:hover {
         background-color: var(--color);
+        color: var(--text-color);
         box-shadow: 2px 2px 0 0 #000;
       }
     }

@@ -117,6 +117,7 @@
     overflow-x: clip;
     @media (max-width: 1024px) {
       position: fixed;
+
     }
     nav {
       display: flex;
@@ -127,7 +128,7 @@
     ul {
       display: flex;
       flex-wrap: wrap;
-
+      
       list-style-type: "";
       gap: var(--gap);
       padding: 0;
@@ -145,14 +146,14 @@
         opacity: 0;
         transform: translateY(30%) rotate(-15deg);
         transition:
-          transform 0.4s var(--bouncy-ease),
+        transform 0.4s var(--bouncy-ease),
           opacity 0.4s var(--bouncy-ease),
           visibility 0s 0.4s;
 
         &.is-open {
           visibility: visible;
           opacity: 1;
-          transform: translateY(0) rotate(0);
+          transform: translateY(0) rotate(0) translateZ(1px);
           transition:
             transform 0.4s var(--bouncy-ease),
             opacity 0.4s var(--bouncy-ease),

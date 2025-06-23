@@ -16,7 +16,7 @@ export const data = {
       ]
     },
     {
-      title: 'Arriving through the Jakoba Mulderhuis',
+      title: 'Arriving through Jakoba Mulderhuis',
       level: 'h2',
       titleClass: 'small-heading',
       textClass: 'small-body',
