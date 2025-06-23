@@ -11,7 +11,7 @@
   <p class="small-body">
     <!-- <button onclick={openRegisterForm}> -->
      <a href="https://assets-eur.mkt.dynamics.com/7c8e8ad8-52ca-ed11-aece-0022489e3349/digitalassets/standaloneforms/4fbea2b4-af4a-f011-877a-000d3ab670f1?readableEventId=Exposjoo_20253465078783" target="_blank">
-      <Calendar /> 2 juli 2025 - 17h - 21h 
+      <Calendar /> 2 july 2025 - 5 PM - 9 PM 
      </a>
     <!-- </button> -->
     <a href="https://maps.app.goo.gl/R6NSiGg9Qx6RXmuT6" target="_blank">  

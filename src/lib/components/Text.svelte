@@ -10,7 +10,7 @@
     <div class="text-container {item.image ? 'has-image' : ''}">
       {#if item.image}
         <figure class="image">
-          <img src={item.image.src} alt={item.image.alt} />
+          <img src={item.image.src} alt={item.image.alt} loading="lazy" />
           {#if item.image.caption}
             <figcaption class="caption xxsmall-body">{item.image.caption}</figcaption>
           {/if}
