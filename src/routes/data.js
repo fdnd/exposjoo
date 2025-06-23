@@ -71,7 +71,7 @@ export const data = {
       name: 'Talks',
       class: 'talks',
       size: 'span 3',
-      color: '#5FCE67',
+      color: '#ececec',
       modal: {
         title: 'Talks',
         intro: 'On the second floor, our teachers will present a number of fun and important talks for all visitors.',
