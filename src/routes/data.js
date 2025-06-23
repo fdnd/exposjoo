@@ -9,7 +9,7 @@ export const data = {
       name: 'MDD',
       class: 'mdd',
       size: 'span 1',
-      color: 'rgba(0, 0, 0, 0.25)',
+      color: '#112C39',
       modal: {
         title: 'Master Digital Design (MDD)',
         intro: 'On the fourth floor you can find all the end products of the projects of the students of the one-year Master Digital Design (MDD).',
@@ -39,7 +39,7 @@ export const data = {
       name: 'CMD',
       class: 'cmd',
       size: 'span 3',
-      color: '#ffcc00',
+      color: '#fff021',
       modal: {
         title: 'Communication and Multimedia Design (CMD)',
         intro: 'The third floor houses the best student work of the Communication and Multimedia Design (CMD) programme. The work was nominated by the CMD teachers last year.',
@@ -76,7 +76,9 @@ export const data = {
         title: 'Talks',
         intro: 'On the second floor, our teachers will present a number of fun and important talks for all visitors.',
         program_short: `
-        
+        <a href="/about#talks" class="button">
+          Learn more <span class="sr-only">about the talks</span>
+        </a>
         `
       }
     },

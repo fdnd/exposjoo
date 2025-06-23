@@ -50,8 +50,15 @@ button {
   font-weight: 600;
 }
 
+.small-heading {
+  font-size: max(1.25rem, calc(24/var(--design-size) * 100vw));
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
 .medium-body {
-  font-size: max(1.25rem, calc(18/var(--design-size) * 100vw));
+  font-size: max(1.15rem, calc(18/var(--design-size) * 100vw));
   line-height: 1.2;
   letter-spacing: -0.04em;
 }
@@ -65,9 +72,22 @@ button {
 
 .xsmall-body {
   font-size: max(0.875rem, calc(12/var(--design-size) * 100vw));
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+.xxsmall-body {
+  font-size: 0.7rem;
   line-height: 1.2;
   letter-spacing: -0.04em;
   font-weight: 500;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+.font-semibold {
+  font-weight: 600;
 }
 
 .button {
@@ -99,10 +119,17 @@ a {
 .p .large-heading + .small-body,
 .p .medium-heading + .medium-body,
 .p .medium-heading + .small-body,
+.p .medium-heading + .xsmall-body,
+.p .small-heading + .medium-body,
+.p .small-heading + .small-body,
+.p .small-heading + .xsmall-body,
 .p .medium-body + .medium-body,
 .p .medium-body + .small-body,
+.p .medium-body + .xsmall-body,
 .p .small-body + .medium-body,
-.p .small-body + .small-body {
+.p .small-body + .small-body,
+.p .xsmall-body + .xsmall-body
+ {
   margin-top: 1em;
 }
 

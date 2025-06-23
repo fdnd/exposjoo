@@ -1,12 +1,11 @@
 <script>
   import Text from '$lib/components/Text.svelte'
-  import Schedule from '$lib/components/Schedule.svelte'
   import { data } from './data'
 </script>
 
 <svelte:head>
   <title>
-    Schedule Exposjoo - a typical Amsterdam digital design sjoo
+    Location Exposjoo - a typical Amsterdam digital design sjoo
   </title>
   <meta name="description" content="Exposjoo is an evening in which we proudly present the student work of the Associate Degreed Frontend Design and Development, the Master Digital Design and the Bachelor Communication and Multimedia Design." />
   <meta name="keywords" content="digital design, development, sjoo, amsterdam, university of applied sciences" />
@@ -28,4 +27,3 @@
 
 <Text textContainers={data.textContainers} />
 
-<Schedule schedule={data.schedule} />

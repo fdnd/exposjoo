@@ -32,6 +32,12 @@
       duration: '0.4s',
     },
     {
+      name: 'Location',
+      href: `${base}/location`,
+      line: 'Underline5',
+      duration: '0.4s',
+    },
+    {
       name: 'Contact',
       href: `${base}/contact`,
       line: 'Underline4',
@@ -98,7 +104,7 @@
 
 <style lang="scss">
   .header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -108,6 +114,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    overflow-x: clip;
     nav {
       display: flex;
       flex-wrap: wrap;
@@ -121,7 +128,7 @@
       list-style-type: "";
       gap: var(--gap);
       padding: 0;
-      @media (max-width: 900px) {
+      @media (max-width: 1024px) {
         position: absolute;
         top: 4rem;
         right: var(--padding);
@@ -195,7 +202,7 @@
         background-color: #fff;
         color: #000;
       }
-      @media (max-width: 900px) {
+      @media (max-width: 1024px) {
         position: fixed;
         bottom: var(--padding);
         z-index: 10;
@@ -232,7 +239,7 @@
           transform 0.4s var(--bouncy-ease),
           opacity 0.4s var(--bouncy-ease);
       }
-      @media (max-width: 900px) {
+      @media (max-width: 1024px) {
         display: block;
       }
     }
