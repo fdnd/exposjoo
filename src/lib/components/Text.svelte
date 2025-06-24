@@ -82,6 +82,10 @@
       .image {
         min-height: max(10rem, calc(200 / var(--design-size) * 100vw));
         position: relative;
+        @media (max-width: 750px) {
+          min-height: 300px;
+        }
+
         img, video {
           position: absolute;
           top: 0;
