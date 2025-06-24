@@ -4,13 +4,16 @@
   import IntroText from "$lib/components/IntroText.svelte";
   import { onMount } from "svelte";
   import { data } from "./data";
-
+  import { openModalBasedOnQuery } from "$lib/index.js";
+  
   let buildingComponent;
   let introComplete = false;
   let buildingAnimationStarted = false;
 
   function handleIntroComplete() {
+    openModalBasedOnQuery()
     introComplete = true;
+
     if (buildingComponent && !buildingAnimationStarted) {
       buildingAnimationStarted = true;
       buildingComponent.startBuildingAnimation();

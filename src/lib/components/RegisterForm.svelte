@@ -1,11 +1,6 @@
 <script>
   import Close from "../svgs/Close.svelte";
-  import { closeRegisterForm, openModalBasedOnQuery } from "$lib/index.js";
-  import { onMount } from "svelte";
-
-  onMount(() => {
-    openModalBasedOnQuery()
-  })
+  import { closeRegisterForm } from "$lib/index.js";
 </script>
 
 <dialog class="register-form">
