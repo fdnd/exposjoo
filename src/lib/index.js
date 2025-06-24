@@ -1,3 +1,13 @@
+export const openModalBasedOnQuery = () => {
+  const modal = document.querySelector('.register-form')
+  const query = window.location.search
+  if (modal) {
+    if (query.includes('register')) {
+      modal.showModal()
+    }
+  }
+}
+
 export const openRegisterForm = () => {
   const registerForm = document.querySelector('.register-form')
   if (registerForm) {

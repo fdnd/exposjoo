@@ -6,8 +6,7 @@
   import { base } from "$app/paths";
   import { page } from "$app/stores";
   import LineDrawings from "$lib/components/LineDrawings/LineDrawings.svelte";
-  import { openRegisterForm, closeRegisterForm } from "$lib/index.js";
-  
+  import { openRegisterForm, closeRegisterForm } from "$lib/index.js";  
 
   let lineDrawings = $state([]);
 
