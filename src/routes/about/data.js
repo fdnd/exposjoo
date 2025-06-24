@@ -129,7 +129,7 @@ export const data = {
       textClass: 'xsmall-body',
       text: [
         'How can we craft delightful, fluid experiences using just CSS? What does the View Transitions API unlock for us? How can Scroll-Driven Animations change the way we think about storytelling and interactivity on the web? And how do these modern tools impact performance, accessibility, and user experience?',
-        'Cyd is a freelance creative developer and part time teacher at the Amsterdam University of Applied Sciences. She creates accessible, award winning websites for everyone; from large organisations like WeTransfer and Amnesty International to creative agencies and freelancers. She’s got an eye for details and loves to turn flat designs into rich experiences.'
+        'Cyd is a freelance creative developer and part time teacher at the Associate Degree Frontend Design and Development and the Minor Web Development. She creates accessible, award winning websites for everyone; from large organisations like WeTransfer and Amnesty International to creative agencies and freelancers. She’s got an eye for details and loves to turn flat designs into rich experiences.'
       ]
     }
   ]

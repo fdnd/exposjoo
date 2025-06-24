@@ -659,16 +659,19 @@
 </svg>
 
 <div class="window-1 {showClass}" style="--clip-url: url(#mdd-window)">
-  <video src="/videos/people.mp4" autoplay loop muted playsinline></video>
+  <video src="/videos/mdd.mp4" autoplay loop muted playsinline loading="lazy"></video>
 </div>
 <div class="window-2 {showClass}" style="--clip-url: url(#fdnd-window)">
-  <video src="/videos/party.mp4" autoplay loop muted playsinline></video>
+  <video src="/videos/julia.mp4" autoplay loop muted playsinline loading="lazy"></video>
+  <video src="/videos/party.mp4" autoplay loop muted playsinline loading="lazy"></video>
 </div>
 <div class="window-3 {showClass}" style="--clip-url: url(#cmd-window)">
-  <video src="/videos/cmd.mp4" autoplay loop muted playsinline></video>
+  <video src="/videos/cmd.mp4" autoplay loop muted playsinline loading="lazy"></video>
+  <video src="/videos/curtains.mp4" autoplay loop muted playsinline loading="lazy"></video>
 </div>
 <div class="window-4 {showClass}" style="--clip-url: url(#talks-window)">
-  <video src="/videos/talk.mp4" autoplay loop muted playsinline></video>
+  <video src="/videos/immersive.mp4" autoplay loop muted playsinline loading="lazy"></video>
+  <video src="/videos/hacking.mp4" autoplay loop muted playsinline loading="lazy"></video>
 </div>
 
 
@@ -697,6 +700,9 @@
     display: none;
     &.show {
       display: block;
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
     @media (prefers-reduced-motion: reduce) {
       display: none;
@@ -711,17 +717,22 @@
   
   .window-1 {
     video {
-      width: 6%;
-      top: 42%;
-      left: 45%;
+      width: 5.6%;
+    top: 42%;
+    left: 44%;
     }
   }
   .window-2 {
     background-color: hotpink;
     video {
-      width: 7%;
-      top: 36%;
-      left: 75%;
+      width: 5.5%;
+      top: 40.8%;
+      left: 50.5%;
+      & + video {
+        width: 7%;
+        top: 36%;
+        left: 75%;
+      }
     }
   }
   .window-3 {
@@ -730,14 +741,24 @@
       width: 5%;
       top: 50%;
       left: 43.5%;
+      & + video {
+        width: 4.5%;
+        top: 43%;
+        left: 75.7%;
+      }
     }
   }
   .window-4 {
     background-color: hotpink;
     video {
-      width: 4%;
-      top: 54%;
-      left: 61%;
+      width: 7%;
+      top: 57%;
+      left: 42%;
+      & + video {
+        width: 20%;
+        top: 55%;
+        left: 61%;
+      }
     }
   }
 </style>

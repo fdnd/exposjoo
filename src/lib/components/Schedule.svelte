@@ -21,6 +21,14 @@
           {#each item.text as text}
             <p class="small-body">{@html text}</p>
           {/each}
+          <div class="bubbles">
+            {#each item.bubbles as bubble}
+              <p class="bubble xsmall-body" style="background-color: {item.color}; color: {item.textColor}">{@html bubble}</p>
+            {/each}
+          </div>
+          {#if item.button}
+            <a class="button" href={item.button.href}>{item.button.text}</a>
+          {/if}
         </div>
       </li>
     {/each}
@@ -59,6 +67,19 @@
         }
         .text-container {
           padding: 0.5em var(--padding) 0;
+          .button {
+            margin-top: 1em;
+          }
+        }
+        .bubbles {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25em;
+        }
+        .bubble {
+          padding: 0.25em 0.5em;
+          border-radius: 0.25em;
+          margin-top: 0.5em;
         }
       }
     }
