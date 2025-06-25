@@ -57,7 +57,7 @@ export const data = {
       title: 'Talks',
       floor: '2nd floor',
       subtext: 'Talks by our lecturers',
-      time: '6.30 - 7.30 PM',
+      time: '7 - 8 PM',
       text: [
         'The lecturers of the three programmes will give a number of short talks about topics from our field. More speakers will be added to this list:',
       ],

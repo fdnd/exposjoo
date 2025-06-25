@@ -43,8 +43,8 @@ export const data = {
         caption: '📸 Merten Foto'
       },
       text: [
-        'FDND is the first and only higher education program for Frontend Design & Development in the Netherlands. In two years, we prepare aspiring frontend designers & developers for the professional field.',
-        'Our students not only learn to build websites with the latest technologies but also develop the soft skills of the profession, such as collaboration and communication. We have a strong focus on web standards, accessibility, performance, and responsive design. Our students work on real projects for real clients like Funda, Schiphol, and the Public Library of Amsterdam (OBA). We closely collaborate with leading agencies such as Triple, Q42, and De Voorhoede.'
+        'At FDND, we are very proud of our student\'s work, over the last year they worked on long-term projects for real clients, such as Antoni van Leeuwenhoek Ziekenhuis, Amsterdam Vervoerregio and Buurtcampus Oost. They also made proof of concepts for various design agencies, such as iO Digital, Q42, Triple, The Valley and Future Ready Design.',
+        'Our students create robust websites and web applications based on the latest web technologies with a focus on accessibility and performance!'
       ],
       button: 'FDND',
       link: 'https://fdnd.nl/'
@@ -113,7 +113,7 @@ export const data = {
       ]
     },
     {
-      title: 'FrictionGPT: Unlearning Frictionless Design Through AI Discomfort | Maaike van Cruchten & Frank Kloose',
+      title: 'FrictionGPT: Unlearning Frictionless Design Through AI Discomfort | Maaike van Cruchten & Frank Kloos',
       level: 'h3',
       titleClass: 'small-heading',
       textClass: 'xsmall-body',

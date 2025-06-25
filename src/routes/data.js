@@ -78,7 +78,7 @@ export const data = {
       textColor: '#000',
       modal: {
         title: 'Talks',
-        intro: 'On the second floor, our teachers will present a number of talks about topics from our field for all our visitors.',
+        intro: 'On the second floor, our teachers will present a number of talks for all visitors.',
         program_short: `
         <a href="/about#talks" class="button">
           Learn more <span class="sr-only">about the talks</span>
