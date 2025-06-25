@@ -6,7 +6,8 @@
   import { base } from "$app/paths";
   import { page } from "$app/stores";
   import LineDrawings from "$lib/components/LineDrawings/LineDrawings.svelte";
-  import { openRegisterForm, closeRegisterForm } from "$lib/index.js";  
+  import { openRegisterForm, closeRegisterForm } from "$lib/index.js";
+  import { generateRandomBorderRadius } from "$lib/index.js";
 
   let lineDrawings = $state([]);
 
@@ -78,8 +79,11 @@
     </ul>
   </nav>
   <div class="right">
-    <button class="button is-desktop" onclick={openRegisterForm}> Register </button>
-    <a class="button is-mobile" href="https://assets-eur.mkt.dynamics.com/7c8e8ad8-52ca-ed11-aece-0022489e3349/digitalassets/standaloneforms/4fbea2b4-af4a-f011-877a-000d3ab670f1?readableEventId=Exposjoo_20253465078783" target="_blank"> Register </a>
+    <button class="button is-desktop" onclick={openRegisterForm} style="--border-radius: {generateRandomBorderRadius()}"> Register </button>
+    <div class="button-group is-mobile">
+      <a href="/schedule" class="button" style="--border-radius: {generateRandomBorderRadius()}"> Schedule </a>
+      <a class="button" href="https://assets-eur.mkt.dynamics.com/7c8e8ad8-52ca-ed11-aece-0022489e3349/digitalassets/standaloneforms/4fbea2b4-af4a-f011-877a-000d3ab670f1?readableEventId=Exposjoo_20253465078783" target="_blank" style="--border-radius: {generateRandomBorderRadius()}"> Register </a> 
+    </div>
     <a href="https://hva.nl" class="hva">
       <HvA />
     </a>
@@ -191,6 +195,23 @@
         height: 100%;
       }
     }
+    .button-group {
+      @media (max-width: 1024px) {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--padding);
+        position: fixed;
+        bottom: var(--padding);
+        z-index: 10;
+        left: 50%;
+        transform: translateX(-50%);
+        .button:nth-of-type(1) {
+          color: #000;
+        }
+      }
+    }
     .button {
       padding: 0.5em 1em;
       color: var(--accent-color);
@@ -205,13 +226,7 @@
         background-color: #fff;
         color: #000;
       }
-      @media (max-width: 1024px) {
-        position: fixed;
-        bottom: var(--padding);
-        z-index: 10;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+      
     }
     .trigger {
       padding: 0;

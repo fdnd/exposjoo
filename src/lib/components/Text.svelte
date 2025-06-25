@@ -41,7 +41,7 @@
 <style lang="scss">
   .text {
     margin-top: max(4rem, calc(80 / var(--design-size) * 100vw));
-    padding: 0 var(--padding);
+    padding: 0 var(--padding) var(--gap);
     .text-container {
       display: grid;
       @media (min-width: 1440px) {

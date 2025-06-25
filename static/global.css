@@ -106,7 +106,7 @@ button {
   text-transform: lowercase;
   text-decoration: none;
   display: inline-block;
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border-radius: var(--border-radius, 255px 15px 225px 15px/15px 225px 15px 255px);
   box-shadow: 0 0 0 var(--accent-color);
   transition: box-shadow 0.3s ease;
 }

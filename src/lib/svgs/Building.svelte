@@ -1,12 +1,41 @@
 <script>
+  import gsap from 'gsap';
   import { onMount } from 'svelte';
   import { WindowMDD, WindowFDND, WindowCMD, WindowTalks } from './index.js';
-  let showClass = '';
+
+  let windows = [];
 
   onMount(() => {
-    if (typeof window !== 'undefined' && window.location.search.includes('?show-vids')) {
-      showClass = 'show';
-    }
+    // create an animation that turns opacity of windows from 0 to 1 in a *random* order on a loop, use GSAP
+    const mm = gsap.matchMedia();
+
+    mm.add('(prefers-reduced-motion: reduce)', () => {
+      windows.forEach(window => {
+        // pause all videos when prefers reduced motion is set
+        window.pause();
+      });
+    });
+
+    gsap.set(windows, {
+      opacity: 0
+    })
+    gsap.timeline({
+      repeat: -1,
+      repeatRefresh: true
+    })
+    .to(windows, {
+      opacity: 1,
+      duration: 0.3,
+      stagger: {
+        each: 1.5,
+        from: 'random',
+        ease: 'power2.inOut',
+        repeat: 1, 
+        yoyo: true,
+        repeatDelay: 2,
+        repeatRefresh: true
+      },
+      })
   });
 </script>
 
@@ -658,20 +687,20 @@
 </g>
 </svg>
 
-<div class="window-1 {showClass}" style="--clip-url: url(#mdd-window)">
-  <video src="/videos/mdd.mp4" autoplay loop muted playsinline loading="lazy"></video>
+<div class="window-1" style="--clip-url: url(#mdd-window)">
+  <video src="/videos/mdd.mp4" bind:this={windows[0]} autoplay loop muted playsinline loading="lazy"></video>
 </div>
-<div class="window-2 {showClass}" style="--clip-url: url(#fdnd-window)">
-  <video src="/videos/julia.mp4" autoplay loop muted playsinline loading="lazy"></video>
-  <video src="/videos/party.mp4" autoplay loop muted playsinline loading="lazy"></video>
+<div class="window-2" style="--clip-url: url(#fdnd-window)">
+  <video src="/videos/julia.mp4" bind:this={windows[1]} autoplay loop muted playsinline loading="lazy"></video>
+  <video src="/videos/party.mp4" bind:this={windows[2]} autoplay loop muted playsinline loading="lazy"></video>
 </div>
-<div class="window-3 {showClass}" style="--clip-url: url(#cmd-window)">
-  <video src="/videos/cmd.mp4" autoplay loop muted playsinline loading="lazy"></video>
-  <video src="/videos/curtains.mp4" autoplay loop muted playsinline loading="lazy"></video>
+<div class="window-3" style="--clip-url: url(#cmd-window)">
+  <video src="/videos/cmd.mp4" bind:this={windows[3]} autoplay loop muted playsinline loading="lazy"></video>
+  <video src="/videos/curtains.mp4" bind:this={windows[4]} autoplay loop muted playsinline loading="lazy"></video>
 </div>
-<div class="window-4 {showClass}" style="--clip-url: url(#talks-window)">
-  <video src="/videos/immersive.mp4" autoplay loop muted playsinline loading="lazy"></video>
-  <video src="/videos/hacking.mp4" autoplay loop muted playsinline loading="lazy"></video>
+<div class="window-4" style="--clip-url: url(#talks-window)">
+  <video src="/videos/immersive.mp4" bind:this={windows[5]} autoplay loop muted playsinline loading="lazy"></video>
+  <video src="/videos/hacking.mp4" bind:this={windows[6]} autoplay loop muted playsinline loading="lazy"></video>
 </div>
 
 
@@ -697,16 +726,11 @@
     width: 100%;
     aspect-ratio: 2015/1010;
     clip-path: var(--clip-url);
-    display: none;
-    &.show {
-      display: block;
-      @media (max-width: 1024px) {
-        display: none;
-      }
+    @media (max-width: 750px) {
+      min-width: 140%;
+      max-width: unset;
     }
-    @media (prefers-reduced-motion: reduce) {
-      display: none;
-    }
+
     video {
       position: absolute;
       top: 0;
@@ -718,12 +742,11 @@
   .window-1 {
     video {
       width: 5.6%;
-    top: 42%;
-    left: 44%;
+      top: 42%;
+      left: 44%;
     }
   }
   .window-2 {
-    background-color: hotpink;
     video {
       width: 5.5%;
       top: 40.8%;
@@ -736,7 +759,6 @@
     }
   }
   .window-3 {
-    background-color: hotpink;
     video {
       width: 5%;
       top: 50%;
@@ -749,7 +771,6 @@
     }
   }
   .window-4 {
-    background-color: hotpink;
     video {
       width: 7%;
       top: 57%;

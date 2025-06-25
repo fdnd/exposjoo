@@ -4,6 +4,7 @@
   import gsap from "gsap";
   import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
   import Modal from "./Modal.svelte";
+  import { generateRandomBorderRadius } from '$lib'
 
   let buildingElement;
   let buttons = [];
@@ -190,7 +191,7 @@
   {#each courses as course, i}
     <button
       class={`button course-button medium-body ${course.class}`}
-      style="--size: {course.size}; --color: {course.color}; --text-color: {course.textColor}"
+      style="--size: {course.size}; --color: {course.color}; --text-color: {course.textColor}; --border-radius: {generateRandomBorderRadius()}"
       data-color={course.color}
       data-text-color={course.textColor}
       data-course={course.class}
