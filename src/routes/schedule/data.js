@@ -64,7 +64,7 @@ export const data = {
       bubbles: [
         '<strong>Creative Accessibility</strong> <br>Vasilis van Gemert',
         '<strong>Creativity & Immersive Environments</strong> <br>Bart-Jan Steerenberg',
-        '<strong>FrictionGPT: Unlearning Frictionless Design Through AI Discomfort</strong> <br>Maaike van Cruchten & Frank Kloose',
+        '<strong>FrictionGPT: Unlearning Frictionless Design Through AI Discomfort</strong> <br>Maaike van Cruchten & Frank Kloos',
         '<strong>Modern CSS</strong><br>Cyd Stumpel',
       ],
       button: {
