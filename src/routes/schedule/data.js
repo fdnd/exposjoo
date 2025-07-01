@@ -62,10 +62,10 @@ export const data = {
         'The lecturers of the three programmes will give a number of short talks about topics from our field. More speakers will be added to this list:',
       ],
       bubbles: [
-        '<strong>Creative Accessibility</strong> <br>Vasilis van Gemert',
-        '<strong>Creativity & Immersive Environments</strong> <br>Bart-Jan Steerenberg',
-        '<strong>FrictionGPT: Unlearning Frictionless Design Through AI Discomfort</strong> <br>Maaike van Cruchten & Frank Kloos',
-        '<strong>Modern CSS</strong><br>Cyd Stumpel',
+        '<p class="talk-header"><strong>Creative Accessibility</strong> <span>7 - 7.30 PM</span></p> <p>Vasilis van Gemert</p>',
+        '<p class="talk-header"><strong>FrictionGPT: Unlearning Frictionless Design Through AI Discomfort</strong> <span>7 - 7.30 PM</span></p> <p>Maaike van Cruchten & Frank Kloos</p>',
+        '<p class="talk-header"><strong>Creativity & Immersive Environments</strong> <span>7.30 - 8 PM</span></p> <p>Bart-Jan Steerenberg</p>',
+        '<p class="talk-header"><strong>Modern CSS</strong> <span>7.30 - 8 PM</span></p> <p>Cyd Stumpel</p>',
       ],
       button: {
         text: 'Read more',

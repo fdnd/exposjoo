@@ -67,6 +67,9 @@
         }
         .text-container {
           padding: 0.5em var(--padding) 0;
+          @media (max-width: 750px) {
+            padding: 0.5em 0 0;
+          }
           .button {
             margin-top: 1em;
           }

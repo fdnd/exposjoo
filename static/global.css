@@ -59,7 +59,7 @@ button {
 
 .medium-body {
   font-size: max(1.15rem, calc(18/var(--design-size) * 100vw));
-  line-height: 1.2;
+  line-height: 1.5;
   letter-spacing: -0.04em;
 }
 
@@ -240,4 +240,20 @@ h2 {
   .is-mobile {
     display: block;
   }
+}
+
+.talk-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  strong {
+    display: inline-block;
+    max-width: 80%;
+  }
+}
+
+.talk-header span {
+  font-size: 0.8em;
+  font-weight: 400;
 }
