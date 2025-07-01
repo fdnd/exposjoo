@@ -63,7 +63,7 @@ export const data = {
       ],
       bubbles: [
         '<p class="talk-header"><strong>Creative Accessibility</strong> <span>7 - 7.30 PM</span></p> <p>Vasilis van Gemert</p>',
-        '<p class="talk-header"><strong>FrictionGPT: Unlearning Frictionless Design Through AI Discomfort</strong> <span>7 - 7.30 PM</span></p> <p>Maaike van Cruchten & Frank Kloos</p>',
+        '<p class="talk-header"><strong>FrictionGPT: Unlearning Frictionless Design Through AI Discomfort</strong> <span>7 - 7.30 PM</span></p> <p>Maaike van Cruchten, Frank Kloos & Nelson Tausk</p>',
         '<p class="talk-header"><strong>Creativity & Immersive Environments</strong> <span>7.30 - 8 PM</span></p> <p>Bart-Jan Steerenberg</p>',
         '<p class="talk-header"><strong>Modern CSS</strong> <span>7.30 - 8 PM</span></p> <p>Cyd Stumpel</p>',
       ],

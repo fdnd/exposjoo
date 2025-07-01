@@ -113,7 +113,7 @@ export const data = {
       ]
     },
     {
-      title: 'FrictionGPT: Unlearning Frictionless Design Through AI Discomfort | Maaike van Cruchten & Frank Kloos',
+      title: 'FrictionGPT: Unlearning Frictionless Design Through AI Discomfort | Maaike van Cruchten, Frank Kloos & Nelson Tausk',
       level: 'h3',
       titleClass: 'small-heading',
       textClass: 'xsmall-body',
