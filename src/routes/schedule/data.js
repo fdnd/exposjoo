@@ -16,7 +16,7 @@ export const data = {
       textColor: '#fff',
       title: 'Master Digital Design',
       floor: '4th floor',
-      subtext: 'Exposition student work',
+      subtext: 'Exhibition student work',
       time: '5 - 9 PM',
       text: [
         'Students’ work in this exhibition are projects from our three Playgrounds: Beyond Human Design, Emerging Interactions, Design for Health/Care'
@@ -27,7 +27,7 @@ export const data = {
       textColor: '#fff',
       title: 'Frontend Design and Development',
       floor: '4th floor',
-      subtext: 'Exposition student work',
+      subtext: 'Exhibition student work',
       time: '5 - 9 PM',
       text: [
         'On the fourth floor you can find all the end products of the students of the two-year Associate Degree Frontend Design and Development (FDND).'
@@ -41,7 +41,7 @@ export const data = {
       textColor: '#000',
       title: 'Communication and Multimedia Design',
       floor: '3rd floor',
-      subtext: 'Exposition student work',
+      subtext: 'Exhibition student work',
       time: '5 - 9 PM',
       text: [
         'At the end of each academic year, we proudly present the best student work that has been created this year. The Communication and Multimedia Design teachers have nominated this work for the Golden Dot Awards 2025.',
